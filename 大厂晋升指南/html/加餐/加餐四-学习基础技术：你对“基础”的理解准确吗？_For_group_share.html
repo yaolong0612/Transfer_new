@@ -1,0 +1,1158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
+    <title>加餐四-学习基础技术：你对“基础”的理解准确吗？</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <style>
+        html {
+            color: #333;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-rendering: optimizelegibility;
+            font-family: Helvetica Neue, PingFang SC, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif
+        }
+
+        html.borderbox *,
+        html.borderbox :after,
+        html.borderbox :before {
+            box-sizing: border-box
+        }
+
+        article,
+        aside,
+        blockquote,
+        body,
+        button,
+        code,
+        dd,
+        details,
+        dl,
+        dt,
+        fieldset,
+        figcaption,
+        figure,
+        footer,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        header,
+        hr,
+        input,
+        legend,
+        li,
+        menu,
+        nav,
+        ol,
+        p,
+        pre,
+        section,
+        td,
+        textarea,
+        th,
+        ul {
+            margin: 0;
+            padding: 0
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        menu,
+        nav,
+        section {
+            display: block
+        }
+
+        audio,
+        canvas,
+        video {
+            display: inline-block
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, Helvetica, sans-serif
+        }
+
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            padding: 0;
+            border: 0
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        fieldset,
+        img {
+            border: 0
+        }
+
+        blockquote {
+            position: relative;
+            color: #999;
+            font-weight: 400;
+            border-left: 1px solid #1abc9c;
+            padding-left: 1em;
+            margin: 1em 3em 1em 2em
+        }
+
+        @media only screen and (max-width: 640px) {
+            blockquote {
+                margin: 1em 0
+            }
+        }
+
+        abbr,
+        acronym {
+            border-bottom: 1px dotted;
+            font-variant: normal
+        }
+
+        abbr {
+            cursor: help
+        }
+
+        del {
+            text-decoration: line-through
+        }
+
+        address,
+        caption,
+        cite,
+        code,
+        dfn,
+        em,
+        th,
+        var {
+            font-style: normal;
+            font-weight: 400
+        }
+
+        ol,
+        ul {
+            list-style: none
+        }
+
+        caption,
+        th {
+            text-align: left
+        }
+
+        q:after,
+        q:before {
+            content: ""
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative
+        }
+
+        :root sub,
+        :root sup {
+            vertical-align: baseline
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        a {
+            color: #1abc9c
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        .typo a {
+            border-bottom: 1px solid #1abc9c
+        }
+
+        .typo a:hover {
+            border-bottom-color: #555;
+            color: #555
+        }
+
+        .typo a:hover,
+        a,
+        ins {
+            text-decoration: none
+        }
+
+        .typo-u,
+        u {
+            text-decoration: underline
+        }
+
+        mark {
+            background: #fffdd1;
+            border-bottom: 1px solid #ffedce;
+            padding: 2px;
+            margin: 0 5px
+        }
+
+        code,
+        pre,
+        pre tt {
+            font-family: Courier, Courier New, monospace
+        }
+
+        pre {
+            background: hsla(0, 0%, 97%, .7);
+            border: 1px solid #ddd;
+            padding: 1em 1.5em;
+            display: block;
+            -webkit-overflow-scrolling: touch
+        }
+
+        hr {
+            border: none;
+            border-bottom: 1px solid #cfcfcf;
+            margin-bottom: .8em;
+            height: 10px
+        }
+
+        .typo-small,
+        figcaption,
+        small {
+            font-size: .9em;
+            color: #888
+        }
+
+        b,
+        strong {
+            font-weight: 700;
+            color: #000
+        }
+
+        [draggable] {
+            cursor: move
+        }
+
+        .clearfix:after,
+        .clearfix:before {
+            content: "";
+            display: table
+        }
+
+        .clearfix:after {
+            clear: both
+        }
+
+        .clearfix {
+            zoom: 1
+        }
+
+        .textwrap,
+        .textwrap td,
+        .textwrap th {
+            word-wrap: break-word;
+            word-break: break-all
+        }
+
+        .textwrap-table {
+            table-layout: fixed
+        }
+
+        .serif {
+            font-family: Palatino, Optima, Georgia, serif
+        }
+
+        .typo-dl,
+        .typo-form,
+        .typo-hr,
+        .typo-ol,
+        .typo-p,
+        .typo-pre,
+        .typo-table,
+        .typo-ul,
+        .typo dl,
+        .typo form,
+        .typo hr,
+        .typo ol,
+        .typo p,
+        .typo pre,
+        .typo table,
+        .typo ul,
+        blockquote {
+            margin-bottom: 1rem
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: PingFang SC, Helvetica Neue, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+            color: #000;
+            line-height: 1.35
+        }
+
+        .typo-h1,
+        .typo-h2,
+        .typo-h3,
+        .typo-h4,
+        .typo-h5,
+        .typo-h6,
+        .typo h1,
+        .typo h2,
+        .typo h3,
+        .typo h4,
+        .typo h5,
+        .typo h6 {
+            margin-top: 1.2em;
+            margin-bottom: .6em;
+            line-height: 1.35
+        }
+
+        .typo-h1,
+        .typo h1 {
+            font-size: 2em
+        }
+
+        .typo-h2,
+        .typo h2 {
+            font-size: 1.8em
+        }
+
+        .typo-h3,
+        .typo h3 {
+            font-size: 1.6em
+        }
+
+        .typo-h4,
+        .typo h4 {
+            font-size: 1.4em
+        }
+
+        .typo-h5,
+        .typo-h6,
+        .typo h5,
+        .typo h6 {
+            font-size: 1.2em
+        }
+
+        .typo-ul,
+        .typo ul {
+            margin-left: 1.3em;
+            list-style: disc
+        }
+
+        .typo-ol,
+        .typo ol {
+            list-style: decimal;
+            margin-left: 1.9em
+        }
+
+        .typo-ol ol,
+        .typo-ol ul,
+        .typo-ul ol,
+        .typo-ul ul,
+        .typo li ol,
+        .typo li ul {
+            margin-bottom: .8em;
+            margin-left: 2em
+        }
+
+        .typo-ol ul,
+        .typo-ul ul,
+        .typo li ul {
+            list-style: circle
+        }
+
+        .typo-table td,
+        .typo-table th,
+        .typo table caption,
+        .typo table td,
+        .typo table th {
+            border: 1px solid #ddd;
+            padding: .5em 1em;
+            color: #666
+        }
+
+        .typo-table th,
+        .typo table th {
+            background: #fbfbfb
+        }
+
+        .typo-table thead th,
+        .typo table thead th {
+            background: hsla(0, 0%, 95%, .7)
+        }
+
+        .typo table caption {
+            border-bottom: none
+        }
+
+        .typo-input,
+        .typo-textarea {
+            -webkit-appearance: none;
+            border-radius: 0
+        }
+
+        .typo-em,
+        .typo em,
+        caption,
+        legend {
+            color: #000;
+            font-weight: inherit
+        }
+
+        .typo-em {
+            position: relative
+        }
+
+        .typo-em:after {
+            position: absolute;
+            top: .65em;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            content: "\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB"
+        }
+
+        .typo img {
+            max-width: 100%
+        }
+
+        .common-content {
+            font-weight: 400;
+            color: #353535;
+            line-height: 1.75rem;
+            white-space: normal;
+            word-break: normal;
+            font-size: 1rem
+        }
+
+        .common-content img {
+            display: block;
+            max-width: 100%;
+            background-color: #eee
+        }
+
+        .common-content audio,
+        .common-content video {
+            width: 100%;
+            background-color: #eee
+        }
+
+        .common-content center,
+        .common-content font {
+            margin-top: 1rem;
+            display: inline-block
+        }
+
+        .common-content center {
+            width: 100%
+        }
+
+        .common-content pre {
+            margin-top: 1rem;
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+            overflow: hidden
+        }
+
+        .common-content pre code {
+            font-size: .8rem;
+            font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            overflow-x: auto
+        }
+
+        .common-content hr {
+            border: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #f5f5f5;
+            height: 1px;
+            background: none
+        }
+
+        .common-content b,
+        .common-content h1,
+        .common-content h2,
+        .common-content h3,
+        .common-content h4,
+        .common-content h5,
+        .common-content strong {
+            font-weight: 700
+        }
+
+        .common-content h1,
+        .common-content h2 {
+            font-size: 1.125rem;
+            margin-bottom: .45rem
+        }
+
+        .common-content h3,
+        .common-content h4,
+        .common-content h5 {
+            font-size: 1rem;
+            margin-bottom: .45rem
+        }
+
+        .common-content p {
+            font-weight: 400;
+            color: #353535;
+            margin-top: .15rem
+        }
+
+        .common-content .orange {
+            color: #ff5a05
+        }
+
+        .common-content .reference {
+            font-size: 1rem;
+            color: #888
+        }
+
+        .custom-rich-content h1 {
+            margin-top: 0;
+            font-weight: 400;
+            font-size: 15.25px;
+            border-bottom: 1px solid #eee;
+            line-height: 2.8
+        }
+
+        .custom-rich-content li,
+        .custom-rich-content p {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.6
+        }
+
+        table.hljs-ln {
+            margin-bottom: 0;
+            border-spacing: 0;
+            border-collapse: collapse
+        }
+
+        table.hljs-ln,
+        table.hljs-ln tbody,
+        table.hljs-ln td,
+        table.hljs-ln tr {
+            box-sizing: border-box
+        }
+
+        table.hljs-ln td {
+            padding: 0;
+            border: 0
+        }
+
+        table.hljs-ln td.hljs-ln-numbers {
+            min-width: 15px;
+            color: rgba(27, 31, 35, .3);
+            text-align: right;
+            white-space: nowrap;
+            cursor: pointer;
+            user-select: none
+        }
+
+        table.hljs-ln td.hljs-ln-code,
+        table.hljs-ln td.hljs-ln-numbers {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+            font-size: 12px;
+            line-height: 20px;
+            vertical-align: top
+        }
+
+        table.hljs-ln td.hljs-ln-code {
+            position: relative;
+            padding-right: 10px;
+            padding-left: 10px;
+            overflow: visible;
+            color: #24292e;
+            word-wrap: normal;
+            white-space: pre
+        }
+
+        video::-webkit-media-controls {
+            overflow: hidden !important
+        }
+
+        video::-webkit-media-controls-enclosure {
+            width: calc(100% + 32px);
+            margin-left: auto
+        }
+
+        ._29HP61GA_0 {
+            max-width:800px;
+            margin:0 auto;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #353535;
+            line-height: 1.76;
+            white-space: normal;
+            word-break: normal;
+            font-size: 17px;
+            -webkit-transition: background-color .3s ease;
+            transition: background-color .3s ease
+        }
+
+        ._29HP61GA_0 .MathJax_Display {
+            overflow: auto
+        }
+
+        ._29HP61GA_0 .poster {
+            position: fixed;
+            left: -10000px;
+            top: -10000px;
+            overflow: hidden;
+            padding: 1rem;
+            background: #ececec
+        }
+
+        ._29HP61GA_0 .richcontent-pre-copy {
+            font-size: 13px;
+            color: #888;
+            position: absolute;
+            right: 1em;
+            top: .5em;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        ._29HP61GA_0 .richcontent-pre-copy .iconfont {
+            font-size: 12px;
+            margin-right: .2em
+        }
+
+        ._29HP61GA_0 a {
+            color: #fa8919;
+            border-bottom: 1px solid #fa8919
+        }
+
+        ._29HP61GA_0 img {
+            display: block;
+            max-width: 100%;
+            position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            background-color: #eee;
+            vertical-align: top;
+            border-radius: 0
+        }
+
+        ._29HP61GA_0 audio,
+        ._29HP61GA_0 video {
+            width: 100%;
+            background-color: #eee
+        }
+
+        ._29HP61GA_0 pre {
+            margin-top: 16px;
+            padding: 34px 0 0;
+            margin-bottom: 30px;
+            position: relative;
+            border-radius: 6px;
+            background: rgba(246, 247, 251, .749);
+            border: 0
+        }
+
+        ._29HP61GA_0 pre code {
+            font-size: 12px;
+            font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+            display: block;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin-left: 16px;
+            margin-right: 16px;
+            overflow-x: scroll
+        }
+
+        ._29HP61GA_0 pre code:after {
+            content: "";
+            height: 30px;
+            width: 100%;
+            display: block
+        }
+
+        ._29HP61GA_0 hr {
+            border: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #f5f5f5;
+            height: 1px;
+            background: none
+        }
+
+        ._29HP61GA_0 h1,
+        ._29HP61GA_0 h2,
+        ._29HP61GA_0 h3,
+        ._29HP61GA_0 h4,
+        ._29HP61GA_0 h5 {
+            margin-bottom: 20px;
+            margin-top: 0;
+            font-weight: 700
+        }
+
+        ._29HP61GA_0 b,
+        ._29HP61GA_0 strong {
+            font-weight: 700
+        }
+
+        ._29HP61GA_0 h1 {
+            font-size: 21px
+        }
+
+        ._29HP61GA_0 h2 {
+            font-size: 20px
+        }
+
+        ._29HP61GA_0 h3 {
+            font-size: 19px
+        }
+
+        ._29HP61GA_0 h4 {
+            font-size: 18px
+        }
+
+        ._29HP61GA_0 h5 {
+            font-size: 17px
+        }
+
+        ._29HP61GA_0 center,
+        ._29HP61GA_0 p {
+            font-weight: 400;
+            color: #353535;
+            margin-top: 0;
+            margin-bottom: 30px;
+            word-break: break-word
+        }
+
+        ._29HP61GA_0 center {
+            text-align: center
+        }
+
+        ._29HP61GA_0 blockquote {
+            margin-top: 0;
+            margin-bottom: 34px;
+            border-left: 3px solid #e8e8e8;
+            padding-left: 17px;
+            color: #353535
+        }
+
+        ._29HP61GA_0 blockquote p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        ._29HP61GA_0 ol,
+        ._29HP61GA_0 ul {
+            margin-bottom: 30px
+        }
+
+        ._29HP61GA_0 ol p,
+        ._29HP61GA_0 ul p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        ._29HP61GA_0 ol {
+            list-style: decimal;
+            margin-left: 20px
+        }
+
+        ._29HP61GA_0 ul li {
+            padding-left: 17px;
+            position: relative;
+            margin-bottom: 10px
+        }
+
+        ._29HP61GA_0 ul li:after {
+            content: "";
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background: #353535;
+            position: absolute;
+            top: 10px;
+            left: 0
+        }
+
+        ._29HP61GA_0 .orange {
+            color: #fa8919
+        }
+
+        ._29HP61GA_0 .reference {
+            color: #888
+        }
+
+        ._29HP61GA_0 .m-right {
+            text-align: right
+        }
+
+        ._29HP61GA_0 .m-center {
+            text-align: center;
+            display: block
+        }
+
+        ._29HP61GA_0 .m-gray {
+            color: #888
+        }
+
+        ._29HP61GA_0 .m-small {
+            font-size: 15px
+        }
+
+        ._29HP61GA_0 table.hljs-ln {
+            margin-bottom: 0;
+            border-spacing: 0;
+            border-collapse: collapse
+        }
+
+        ._29HP61GA_0 table.hljs-ln,
+        ._29HP61GA_0 table.hljs-ln tbody,
+        ._29HP61GA_0 table.hljs-ln td,
+        ._29HP61GA_0 table.hljs-ln tr {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        ._29HP61GA_0 table.hljs-ln td {
+            padding: 0;
+            border: 0
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+            min-width: 15px;
+            font-size: 12px;
+            color: rgba(27, 31, 35, .3);
+            text-align: right;
+            white-space: nowrap;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-code,
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+            line-height: 20px;
+            vertical-align: top
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-code {
+            position: relative;
+            padding-right: 10px;
+            padding-left: 10px;
+            overflow: visible;
+            font-size: 13px;
+            color: #666;
+            word-wrap: normal;
+            white-space: pre
+        }
+
+    </style>
+</head>
+<body>
+<div class="_29HP61GA_0">
+<h1>加餐四-学习基础技术：你对“基础”的理解准确吗？</h1>
+<p>你好，我是华仔。</p><p>如果说IT技术领域有哪个说法最深入人心，那一定是“基础很重要”；而如果说有哪个说法让很多人花费了大量时间去学习，却没什么效果的话，那么多半也是这句话。</p><p>我相信你曾经被人谆谆教诲过：做技术，基础很重要，一定要打好基础，比如说数据结构和算法、操作系统、编译原理等等；而且很多公司面试的时候，也采用了“面试造航母，工作拧螺丝”的方式，对基础能力的考察远远超过实际工作需要。</p><p>结果，很多人费了很大的力气来提升所谓的“基础能力”，但是却发现根本看不到提升效果，工作中也用不上，白白浪费时间和精力。</p><p>难道说“基础很重要”这个说法不对吗？其实这个说法本身没有问题，但是它模糊太笼统了，很难准确地理解，再加上一些口口相传的经验误导，搞得很多人都掉到坑里去了。</p><p>这一讲，我来跟你聊聊到底什么才是“基础”，怎么提升基础技术才能事半功倍。</p><h2>典型的错误观点</h2><p>基础能力确实很重要，但是对于什么才是“基础”，业界并没有统一的定义。不过，有几个错误的观点流传很广，误导了很多人，其中最典型的就是以下三个：</p><p><strong>1. 基础 = 底层</strong></p><p>有些人以为越底层的东西越基础，比如操作系统内核（管控程序的运行），编译原理（所有编程语言的基础），CPU的指令和内存（程序运行的基础）……毕竟从字面意思来理解，底层的东西当然是基础了，而且是越底层越重要，因为越底层越通用。</p><!-- [[[read_end]]] --><p><strong>2. 基础 = 源码</strong></p><p>有些人喜欢“Show me the code”，认为只有源码才是最基础的东西，源码面前没秘密，要学基础就一定要去看源码，要自己能写出来才算真正掌握了“基础能力”。</p><p><strong>3. 基础 = 不变</strong></p><p>有些人认为不变的东西才是基础，比如数学、算法和数据结构、计算机组成原理、汇编语言、甚至包括离散数学和逻辑电路等，把这些学好了，以后无论做什么都用得上。</p><p>很多人抱着这样的想法去提升基础，结果却没什么效果。</p><p>我有个同事花了6个月时间去研究编译原理，感觉没什么收获，然后找我来讨论原因。</p><p>我也有位朋友花了大量的时间来看Linux内核源码，看完好像知道了一些源码，但线上出了问题之后，连Linux定位工具都不会用。</p><p>也有很多技术人员用了很多时间来背算法和数据结构的源码，但在实际工作中，要么不知道什么时候用什么算法，要么就滥用算法，明明一个很简单的逻辑也要硬套一个算法。</p><h2>核心就是工作相关</h2><p><strong>要想打好基础能力，首先要明确什么才是真正的“基础能力”</strong>。</p><p>我的观点是“<strong>基础能力是指工作任务相关的基础能力，不是整个计算机技术的基础能力</strong>”，核心就是“<strong>工作相关</strong>”，千万不要单纯照搬别人口中的基础能力。</p><p>基于这个观点，我们来澄清一下前面提到的几个错误观点。</p><p><strong>1. 基础！= 底层</strong></p><p>如果底层技术和当前的工作内容没有关系，那就不是工作要求的基础能力。</p><p>比如CPU指令和内存寻址，对于做嵌入式开发来说是基础，而对于做Android/iOS业务开发来说就不是基础了。</p><p><strong>2. 基础！= 源码</strong></p><p>如果当前的工作并不需要我们去修改其源码或者理解其源码细节，那就不是工作要求的基础能力。</p><p>比如Linux内核源码和Hotspot虚拟机源码，对于做虚拟机开发来说肯定是基础，但是对于Java业务开发来说就不是基础了。</p><p><strong>3. 基础！= 不变</strong></p><p>不变的东西确实应用很广，但是随着技术的发展，不变的东西越来越稳定，封装也越来越抽象，基本上就可以认为不再需要关注它了。</p><p>这就像电一样，我们天天用，电学的原理，你只要上过中学基本都知道。但是我相信，现在没有人在使用电器的时候，还要去翻一翻物理课本吧。</p><p>很多人为了证明“基础很重要”，都会举建房子的例子，因为地基是房子的基础。</p><p>但其实认真思考一下，就算是建房子，打地基的方式也是不断变化的，古人用夯土打地基，后来用石头打地基，现在用钢筋水泥打地基，而且工人在用钢筋水泥打地基的时候，也不需要知道“如何制造水泥”“如何炼钢”这样的基础知识。</p><p>麻省理工大学以前有一门非常火的课程，叫“计算机程序的构造和解释”（SICP，Structure and Interpretation of Computer Programs），但后来他们停止了这门课，给出的原因如下（<a href="http://lambda-the-ultimate.org/node/5335">Why MIT stopped teaching SICP</a>）：</p><blockquote>
+<p>They felt that the SICP curriculum no longer prepared engineers for what engineering is like today.<br>
+Sussman said that in the 80s and 90s, engineers built complex systems by combining simple and well-understood parts. The goal of SICP was to provide the abstraction language for reasoning about such systems.<br>
+Today, this is no longer the case. Sussman pointed out that engineers now routinely write code for complicated hardware that they don’t fully understand (and often can’t understand because of trade secrecy.)<br>
+The same is true at the software level, since programming environments consist of gigantic libraries with enormous functionality.</p>
+</blockquote><p>简单来说，就是SICP课程不是为今天的程序员准备的，而是为20世纪80～90年代的程序员准备的。</p><p>这是因为那个时候的程序员是通过组合简单和深刻理解的部件（其实就是指从底层开始构建）来构建复杂系统，而现在的程序员在复杂的商业硬件和大型的开发库上面来构建复杂系统，就算程序员想了解这些底层硬件和开发库，也可能因为商业秘密等原因无法做到。</p><h2>举例说明</h2><p>按照工作相关这个原则，我举两个常见的例子对比说明一下。</p><p><strong>1. Java业务开发 vs AJDK开发</strong></p><p>它们都是Java相关的开发，我们假设一个是用Java来在Linux平台上基于Spring Boot框架完成业务开发，另一个是要负责阿里的AJDK（基于Hotspot实现，目前已经<a href="https://github.com/alibaba/dragonwell8">开源</a>）开发，那么它们的基础能力差异如下表所示：<br>
+<img src="https://static001.geekbang.org/resource/image/e1/41/e19a45e1a21f30308cf485772eb95541.jpg" alt=""></p><p><strong>2. Android业务开发 vs Android动态化框架</strong></p><p>它们都是Android相关的开发，我们假设一个是做业务开发，一个是开发动态化框架，那么它们的基础能力差异如下表所示：<br>
+<img src="https://static001.geekbang.org/resource/image/74/17/742b3a780297852459639cyy46459117.jpg" alt=""></p><h2>细化基础范围：技能图谱</h2><p>明确了“工作相关”这个原则之后，提升基础的第一步，就是使用<strong>技能图谱</strong>的方式，从以下4个维度来细化基础能力的范围。</p><ol>
+<li><strong>工具</strong>：工作中常用的工具，比如IDE、编程语言、问题定位工具和版本管理工具等。</li>
+<li><strong>生态</strong>：系统或者产品运行时依赖的所有组件或者系统，比如第三方库、中间件、数据库、文件系统和游戏引擎等。</li>
+<li><strong>容器</strong>：系统或者产品在哪里运行，比如Android、iOS、Linux、浏览器和云服务器等。</li>
+<li><strong>原理</strong>：需要掌握的原理知识，常见的有计算机网络和数据结构等。</li>
+</ol><p><img src="https://static001.geekbang.org/resource/image/c8/0d/c8e7e8a6b6b874126d44cea7e181230d.jpg" alt=""></p><p>我们以前端开发为例，基础能力的范围如下图所示：</p><p><img src="https://static001.geekbang.org/resource/image/78/d2/78b17e75655a786a21d27afb812ac6d2.jpg" alt=""></p><p>注：</p><ol>
+<li>上图仅为示例，不代表完整的前端领域基础能力范围。</li>
+<li>图中没有涵盖“JavaScript编程语言”，因为这个可以说是核心能力，不是基础能力。</li>
+</ol><p>有了技能图谱之后，我们就能够大致地了解每个技术领域的基础能力到底包括哪些了。</p><h2>提升技术的技巧</h2><p>明确了基础能力的定义和范围，我们就可以把有限的时间和精力用在更有价值的地方，避免眉毛胡子一把抓，从而实现投入产出效率的最大化。</p><p>但是，单个基础技术怎么学，这也很关键，否则学习还是可能事倍功半。</p><h3>常见学习误区</h3><p>常见的学习误区有两个。第一个是认为，<strong>既然是基础技术，那肯定是掌握得越深越好</strong>，比如数据结构和算法、计算机网络和操作系统这些，几乎是所有程序员的基础，所以每一项都应该深入了解。</p><p>但是这样做还是会导致你浪费很多时间和精力。</p><p>以数据结构和算法为例，很多人学习的时候都采用了背代码的方式，认为只有自己能手写这些代码，才算是真正的掌握。</p><p>而且，有些面试官在面试的时候喜欢让应聘者写简单的算法代码，进一步强化了这样的认知。</p><p>我就曾经跟几个这样的面试官聊过，对话过程几乎一模一样，很有意思：</p><p>问：“为什么你们要用这种方式来判断应聘者的水平？”</p><p>答：“如果一个程序员连个简单的算法都写不出，那就说明他肯定不合格！”</p><p>问：“那你们要自己修改算法和写数据结构吗？”</p><p>答：“怎么可能？直接用Java库里面的，自己写的质量怎么跟Java库的比啊？”</p><p>问：“一般你们考什么算法和数据结构？”</p><p>答：“冒泡啊、快排啊、链表、字符串之类的？”</p><p>问：“那为什么你们不要求手写B+树，不手写ConcurrentHashMap这些呢？这些难度更高。”</p><p>答：这个要求有点高啊，现场写不完，其实我自己也写不出……</p><p>在上面的对话中，我们可以看到，其实这种面试方式就属于“面试造航母，工作拧螺丝”，不能判断应聘者水平高低，只能反映出他们面试准备程度的高低；而且能考的也就是这几个简单的数据结构和算法题目，因为面试官自己也只能看懂这几个。</p><p>第二个误区是认为，<strong>要完全掌握基础，一定要掌握源码</strong>。</p><p>这个观点更加容易导致你投入大量时间却没什么收获。尤其是Linux内核源码、JVM虚拟机源码和MySQL源码这些，如果你不具备深厚的C/C++的开发功力，基本上连看都看不懂，更不用说考虑代码规模和复杂度了。</p><p>即便是Netty这些代码相对少一些的开源项目，就算你拥有很强的Java开发技术，要想每一行代码都了解，也要花非常多的时间的。</p><p>因为一个成熟的开源项目，都是几十个人用了很多年的时间慢慢积累的，你一个人想一下子就全部搞懂所有代码，这是不现实的。而如果你把时间浪费在这个地方，用来提升其他更有用的技术的时间就没有了。</p><h3>如何判断学习深度？</h3><p>所以说，就算是同一个基础技术，不同的技术人员学习的深度也是不同的。核心的原则还是之前提到的“工作相关”，根据工作内容来决定基础技术的学习深度。</p><p>下面，我举几个常见的例子来说明。</p><p><strong>1. 数据结构和算法</strong></p><p>对于绝大部分开发人员来说，主要是熟悉数据结构和算法的原理、优缺点与应用场景，还有自己所用的编程语言提供的算法和数据结构。</p><p>而对于中间件开发的技术人员来说，在做极致的性能优化的时候，Java的ConcurrentHashMap之类的并发数据结构，就需要掌握算法的原理和代码实现细节了。</p><p><strong>2. 计算机网络</strong></p><p>对于绝大部分开发人员来说，能够熟练掌握抓包工具抓取TCP/IP包，并且能够看懂包信息，定位网络问题就行了。</p><p>而对于运维人员来说，抓包、路由协议、组网配置等就需要深入掌握了。</p><p><strong>3. 操作系统</strong></p><p>对于绝大部分开发人员来说，掌握基本的操作系统原理和概念，能够使用操作系统提供的工具来定位程序问题就行了。</p><p>而对于驱动开发、内核模块开发的技术人员来说，操作系统原理、实现机制和代码都需要深入掌握。</p><h3>如何让理解更加深入？</h3><p>明确学习深度之后，因为基础知识点比较多，看起来比较散，所以你可能学了很多知识，但是不知道它们之间的关联关系，理解不够全面和深入。</p><p>应对这个问题办法就是<a href="https://time.geekbang.org/column/article/331463">第19讲</a>中介绍的“链式学习法”，通过领域分层将基础技术和顶层的实用技术关联起来，形成系统化的理解，这样能够理解得更深，记得更牢固。</p><h3>基础积累会不会浪费？</h3><p>看到这里，你可能会有疑问：判断基础能力范围和基础技术学习深度的原则都是“工作相关”，那么如果工作发生变化，岂不是很多基础技术的积累都白费了？</p><p>这里就要看所谓的“变”具体是怎么变。</p><p>如果是前后两个工作的领域基本一致，那么基础技术的积累基本上是可以通用的。比如我曾经从PHP服务端开发转为Java服务端开发，在数据结构和算法、计算机网络、数据库和操作系统方面的积累完全可以通用。</p><p>但如果前后两个工作领域差异很大，那么基础技术的积累确实可能无法通用。比如我的一位同事从Android开发转为服务端后台开发，虽然数据结构和算法、计算机网络可以通用，但是SQLite数据库和Android操作系统这些就不能通用了。</p><p>所以跨领域转岗一定要慎重，要转的话就尽早转，越晚损失越大。</p><h2>我的实际经历</h2><p>我刚去UC的时候，是用C/C++做中间件，对高性能和网络都有比较高的要求。于是我深入地学习了CPU和网络的一些基础知识，最典型的就是SMP架构的CPU 的False Sharing（伪共享）问题。</p><p>这个知识点理论上属于计算机组成原理，但是计算机组成原理一般只会写CPU有L1/L2/L3 Cache，很少提到多核CPU的的Cache Line（缓存行）对齐会导致False Sharing问题，并且对性能有很大影响。MySQL也被这个问题给坑过，而Disruptor的高性能则是采用padding避免了这个坑。</p><p>你看到这里，可能会急着想去看看我说的False Sharing到底是什么。别急，这个基础知识点在我后来负责业务开发的时候就没用了，因为接触不到这个深度。</p><p>但是做业务开发的时候，MySQL的索引原理和Elasticsearch的倒排索引这些基础理论就很有用了，因为你要设计合理的索引和存储方案。不过这个时候，你也不需要把B+ tree的数据结构写出来，只需要知道原理，就可以设计合理的索引和存储方案了。</p><h2>小结</h2><p>现在，我们回顾一下这一讲的重点。</p><ol>
+<li>基础能力是指工作任务相关的基础能力，不是整个计算机技术的基础能力。基础不等于底层，不等于源码，也不等于不变。</li>
+<li>提升基础的第一步，就是使用技能图谱的方式，从工具、生态、容器和原理这4个维度细化基础能力的范围。</li>
+<li>提升基础技术的技巧包括：根据工作内容来决定基础技术的学习深度；通过链式学习法将基础技术和实际用到的技术系统串起来；跨领域转岗要慎重，要转的话就尽早转。<br>
+<img src="https://static001.geekbang.org/resource/image/ea/78/eae375bb7971a24d7b4a15bed39dff78.jpg" alt=""></li>
+</ol><h2>思考题</h2><p>这就是今天的全部内容，留一道课后思考题给你吧。按照这一讲的内容，你能够整理出你当前工作岗位要求基础技术包括哪些，以及你需要学到怎样的深度吗？</p><p>欢迎你把答案写到留言区，和我一起讨论。相信经过深度思考的回答，也会让你对知识的理解更加深刻。<br>
+<img src="https://static001.geekbang.org/resource/image/fy/c6/fyyeedd06a76490e2ac7ae173fe1a2c6.jpeg" alt=""></p><h2>精选留言：</h2>
+        <ul>
+        
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            humor  2021-01-15 00:50:02
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            虽然道理是这样，但是如果没有学过某项基础技术，比如操作系统和网络，我怎么知道我学到什么深度才算合适呢？或者我后来的工作遇到了难题，要解决这个难题需要用到比较深的基础技术，但是我又没去学这么深，我怎么能想到要去学这项技术，然后应用呢？ [5赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-15 09:31:46</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">第一个问题：<br>如果你完全都没学过某个技术，连它包含什么内容，涉及哪些概念，有什么应用场景都完全不清楚，是不可能看一眼就知道应该学到什么深度的。<br><br>要想自己不学就知道其深度，只有让别人来告诉你，即使别人来告诉你，你也只是知道了结果，不知道为什么有的是要深度学习，有的是要大概了解。<br><br>所以说学习不是一次性的，而是要逐步迭代深入的。以计算机网络为例，第一次学习你至少要系统的找本书或者资料系统学习一下，你就能够知道其内容涵盖DNS、TCP、IP、BGP、ARP、RARP、RIP、OSPF……这一大串技术，此时你已经知道每个技术点的大概含义和适应范围了，你再结合自己的工作来判断哪些是大概了解，那些是要深入学习的。<br><br>例如，你是做Java后台业务开发的，那DNS、TCP、IP是需要深入了解的，但是ARP、OSPF、BGP就不需要深入了解；但如果你是运维，这些基本都要深入理解。<br><br>第二个问题：<br>要么别人告诉你，要么自己带着问题去探索，然后找到对应的技术点，再深入学习。<br>例如，false sharing这个案例，一开始我也不知道，我是去查&quot;multi-thread high performance&quot;这个关键字，然后无意中发现的，发现后我就深入的去学习了一下，又了解了MESI等关联知识。<br></div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            sugar  2021-01-24 10:21:08
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            说一下自己的感受：<br>总有种感觉：做业务会导致自己的技术在整个计算机科学的技能树上停留在浅层次浅尝辄止，无法深入，做了2-3年基本可以把同一个岗位 做业务所需的技能点全部点亮了，再进一步去点亮更深的技能点都会存在老师在本为中说的：“因为用不到，所以学也没什么用，硬着头皮学收益也会很小”。因此 一直做业务，无法建立自己的不可替代性；<br>而做基础类技术研发，更像是做科研，有非常多的东西需要去学习，随着时间的积累，可以把技能树一直往深入点亮下去，建立起自己的技术壁垒。技术壁垒有啥用呢？我认为最务实的就是去应对996和35岁焦虑，因为这本质上是国内劳动力过剩导致的一种病态职场现象，做科研的方式去做基础技术而非业务开发，这能让自己无法轻易被年轻人替代，是一个应对上述职业焦虑的办法。<br>如果一直做业务，似乎必须在管理方面建立自己的“不可替代性”，但是这里存在一个我个人觉得很不爽的地方，就是技术经理普遍面临的尴尬问题：在业务团队每当你面临与pm在产品思路上争论时，技术人的话语权有限，而做基础技术，能有更多工作上的自由，因为在这个领域没有pm，一切东西该怎么做、做成什么样、做得好不好都是技术岗的leader或高工去定义的，pm根本不懂，公司高层也不会轻易干涉，往往会让cto自己养一批技术过硬的人 放手去干就是了。<br>不知华仔老师怎么看呢？ [4赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-24 17:55:59</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">其实你的理解存在一些误解。<br><br>首先，做业务2～3年就能把技能树点亮，原因不是做业务本身简单，而是业务没有发展，如果你的业务从10万增长到100万，从100万增长到千万，不同阶段需要的技能是不一样的。<br><br>其次，你认为做基础技术可以做的很深并因此可以建立自己的技术壁垒，这也是一个错误的认知。<br>目前国内有团队做基础技术的公司并不多，而且事实上大部分也都是基于开源方案二次开发。<br>除非你能负责基础技术的架构和设计，否则大部分的时候其实也是开发各种和业务功能类似的功能，并不会让你的技术越来越深。<br><br>第三，基础技术做的好不好并不是自己说了算，而是由基础技术的使用方也就是业务团队来评价的，正因为做的好不好没有明确标准，很多时候就看使用方的口碑，<br>有人的地方就有江湖，一般来说，除非你的做的特别好，否则基础技术团队永远都是被吐槽的对象。<br><br>其实，无论是做业务还是做基础技术，要想技术有提升，必须要面对越来越大的挑战，对于业务来说，就是业务规模在增长；对于基础技术来说，就是基础技术更强大；<br>而基础技术最后要体现价值，还是要依托业务来展现，你可能会认为自己的基础技术很牛逼，但是如果业务无法验证、市场无法验证，最后还是作用不大的。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            黄立  2021-01-15 21:37:08
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            毕竟不是做科研，还是以应用为主，学到用到最好 [2赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-16 21:27:50</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">可以这么说，毕竟时间和精力有限，要考虑投入产出比</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Monday  2021-02-08 11:59:14
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            Java服务器开发：<br>1、工具<br>  1）语言-java，SQL，VUE<br>  2）IDE：Ideal<br>  3）版本管理工具：Git<br>  4）依赖管理：Maven<br>2、生态<br>  1）中间件：RabbitMQ、Kafak<br>  2）存储：Redis(Codis集群）、Mongodb、MySQL、Postgres、ES<br>  3）依赖组件&#47;系统：Tomcat、SpringCloud、Springboot、CAT、ZK、Promethus、Dubbo、Activiti、Skywalking、Guava<br>3、容器：Window、Linux、华为云、Docker、K8S<br>4、原理：生态中和各项的原理（待分解）<br><br>感觉很多的东西，但是得分个轻重缓急，本人现在负责冷数据的查询系统，优先学习Postgres [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-02-09 08:58:59</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">分析的非常好，尤其是最后的“轻重缓急”，说明你已经充分理解了晋升原则中的“价值原则”。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Y丶z  2021-01-18 15:09:41
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            说的没错，但是其中有个度很难衡量，就是现在工作中用不到，但是后续突然用到了，如果当时不会，可能就会错失一些机会。 [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-18 15:27:22</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">先把常用的，流行的，成熟的学会了，基本不用担心突然要用，因为可以说每个技术都有多个选择，即使突然要用，你积累多了，学起来也很快</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            qinsi  2021-01-16 13:00:31
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            那么问题来了，面试或晋升的时候，如果所有候选人在岗位划定的基础能力范围内水平都是一样的，那要如何决定谁被录取或晋升呢？ [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-16 21:36:15</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">这个没有标准考试，不会出现两个人的分数完全一样的情况，实际评价的时候，不可能认为两个人水平完全一模一样，一般都是“两个差不多”这种评价，然后如果一定要排名，一定能找到理由区分高低的。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            humor  2021-01-15 13:35:45
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            基础技术就算暂时用不到，学习深入一点也会有好处吧，比如可以学习前人的设计思想，将优秀的设计思想引入自己的业务中，或者为以后应用的机会做准备😁 [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-15 14:05:54</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">都可以引入自己的业务了，为啥还说用不到呢？<br><br></div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Geek_558387  2021-02-10 16:12:33
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            至少让我证实了，即使看似级别很高，碰到那些乱七八糟的问题的时候也是确实不会的。其实现在考算法可不止字符串、冒泡、排序那么简单了。整个行业的乱象也比这说的严重，就是互相伤害呗，要想真正意义闭坑，需要思考的还要更多 ... 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-02-10 22:37:43</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">哈哈，哪有什么都会的人啊，我也很多不会啊，现在面试造航母，入职拧螺丝的现象还是很明显的。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            稻草人  2021-01-26 08:56:48
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            巧了，我也和老师一样，因为公司架构转型要从PHP转Java了。希望老师能稍微深入说一说Java业务开发技能学习的先后顺序，就是先怎么快速上手Java，然后怎么持续深入~ 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-26 09:26:54</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">你对照“三段分解法”和“链式学习法”的方法，就可以整理出具体学习Java的计划和内容。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            奇小易  2021-01-19 19:48:24
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            对于基础这个还是有点懵，我读完后理解的基础技术是工作上用到的或者有直接联系的技术。那是不是工作中所有用到的技术都是基础技术？老师说的核心技术是怎么区分？是这个岗位必须牢牢掌握的基础技术？<br>请老师解惑。 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-19 20:22:59</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">你再仔细研究文中的案例，就是前端那个图。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            威龙  2021-01-17 17:10:55
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            “打好基础很重要，打准基础更重要”总结的非常到位，虽然自己不是做技术的同学，但是从这篇加餐中get到学以致用的思想。结合日常做产品工作来思考，就是要找准产品和项目的核心价值，找准业务方核心需求，保持Less is more的设计思想。 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-17 20:57:14</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">很有见地 ：）<br><br>主要是我们的时间和精力有限，如果什么都想学很深，是不现实的，而且投入产出比低。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            我来也  2021-01-15 13:13:08
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            老师真敢说😄<br>上次只说了编译原理，这次说了一大堆。 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-15 14:07:34</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">你觉得说的有道理不？😂</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            术子米德  2021-01-15 12:25:16
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            🤔☕️🤔☕️🤔<br>基础:=你当前使用技术的支撑技术，理解当前层的支撑层，这样的技术够基础、够实用<br>基础:=你当前思维方式的思维框架，理解你的思维哪里来，受约束哪些思维方式，这样去思考，就像万维钢老师说的Something bigger than yourself，这样的思维够基础、够实用<br> 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-15 14:09:30</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">有点抽象，我看不太懂😂</div>
+</div>
+            
+    </div>
+</li>
+            </ul>
+</div>
+</body>
+</html>

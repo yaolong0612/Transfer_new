@@ -1,0 +1,1064 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
+    <title>20-Play&Teach：怎么摆脱“从入门到忘记”的学习困境？</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <style>
+        html {
+            color: #333;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-rendering: optimizelegibility;
+            font-family: Helvetica Neue, PingFang SC, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif
+        }
+
+        html.borderbox *,
+        html.borderbox :after,
+        html.borderbox :before {
+            box-sizing: border-box
+        }
+
+        article,
+        aside,
+        blockquote,
+        body,
+        button,
+        code,
+        dd,
+        details,
+        dl,
+        dt,
+        fieldset,
+        figcaption,
+        figure,
+        footer,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        header,
+        hr,
+        input,
+        legend,
+        li,
+        menu,
+        nav,
+        ol,
+        p,
+        pre,
+        section,
+        td,
+        textarea,
+        th,
+        ul {
+            margin: 0;
+            padding: 0
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        menu,
+        nav,
+        section {
+            display: block
+        }
+
+        audio,
+        canvas,
+        video {
+            display: inline-block
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, Helvetica, sans-serif
+        }
+
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            padding: 0;
+            border: 0
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        fieldset,
+        img {
+            border: 0
+        }
+
+        blockquote {
+            position: relative;
+            color: #999;
+            font-weight: 400;
+            border-left: 1px solid #1abc9c;
+            padding-left: 1em;
+            margin: 1em 3em 1em 2em
+        }
+
+        @media only screen and (max-width: 640px) {
+            blockquote {
+                margin: 1em 0
+            }
+        }
+
+        abbr,
+        acronym {
+            border-bottom: 1px dotted;
+            font-variant: normal
+        }
+
+        abbr {
+            cursor: help
+        }
+
+        del {
+            text-decoration: line-through
+        }
+
+        address,
+        caption,
+        cite,
+        code,
+        dfn,
+        em,
+        th,
+        var {
+            font-style: normal;
+            font-weight: 400
+        }
+
+        ol,
+        ul {
+            list-style: none
+        }
+
+        caption,
+        th {
+            text-align: left
+        }
+
+        q:after,
+        q:before {
+            content: ""
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative
+        }
+
+        :root sub,
+        :root sup {
+            vertical-align: baseline
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        a {
+            color: #1abc9c
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        .typo a {
+            border-bottom: 1px solid #1abc9c
+        }
+
+        .typo a:hover {
+            border-bottom-color: #555;
+            color: #555
+        }
+
+        .typo a:hover,
+        a,
+        ins {
+            text-decoration: none
+        }
+
+        .typo-u,
+        u {
+            text-decoration: underline
+        }
+
+        mark {
+            background: #fffdd1;
+            border-bottom: 1px solid #ffedce;
+            padding: 2px;
+            margin: 0 5px
+        }
+
+        code,
+        pre,
+        pre tt {
+            font-family: Courier, Courier New, monospace
+        }
+
+        pre {
+            background: hsla(0, 0%, 97%, .7);
+            border: 1px solid #ddd;
+            padding: 1em 1.5em;
+            display: block;
+            -webkit-overflow-scrolling: touch
+        }
+
+        hr {
+            border: none;
+            border-bottom: 1px solid #cfcfcf;
+            margin-bottom: .8em;
+            height: 10px
+        }
+
+        .typo-small,
+        figcaption,
+        small {
+            font-size: .9em;
+            color: #888
+        }
+
+        b,
+        strong {
+            font-weight: 700;
+            color: #000
+        }
+
+        [draggable] {
+            cursor: move
+        }
+
+        .clearfix:after,
+        .clearfix:before {
+            content: "";
+            display: table
+        }
+
+        .clearfix:after {
+            clear: both
+        }
+
+        .clearfix {
+            zoom: 1
+        }
+
+        .textwrap,
+        .textwrap td,
+        .textwrap th {
+            word-wrap: break-word;
+            word-break: break-all
+        }
+
+        .textwrap-table {
+            table-layout: fixed
+        }
+
+        .serif {
+            font-family: Palatino, Optima, Georgia, serif
+        }
+
+        .typo-dl,
+        .typo-form,
+        .typo-hr,
+        .typo-ol,
+        .typo-p,
+        .typo-pre,
+        .typo-table,
+        .typo-ul,
+        .typo dl,
+        .typo form,
+        .typo hr,
+        .typo ol,
+        .typo p,
+        .typo pre,
+        .typo table,
+        .typo ul,
+        blockquote {
+            margin-bottom: 1rem
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: PingFang SC, Helvetica Neue, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+            color: #000;
+            line-height: 1.35
+        }
+
+        .typo-h1,
+        .typo-h2,
+        .typo-h3,
+        .typo-h4,
+        .typo-h5,
+        .typo-h6,
+        .typo h1,
+        .typo h2,
+        .typo h3,
+        .typo h4,
+        .typo h5,
+        .typo h6 {
+            margin-top: 1.2em;
+            margin-bottom: .6em;
+            line-height: 1.35
+        }
+
+        .typo-h1,
+        .typo h1 {
+            font-size: 2em
+        }
+
+        .typo-h2,
+        .typo h2 {
+            font-size: 1.8em
+        }
+
+        .typo-h3,
+        .typo h3 {
+            font-size: 1.6em
+        }
+
+        .typo-h4,
+        .typo h4 {
+            font-size: 1.4em
+        }
+
+        .typo-h5,
+        .typo-h6,
+        .typo h5,
+        .typo h6 {
+            font-size: 1.2em
+        }
+
+        .typo-ul,
+        .typo ul {
+            margin-left: 1.3em;
+            list-style: disc
+        }
+
+        .typo-ol,
+        .typo ol {
+            list-style: decimal;
+            margin-left: 1.9em
+        }
+
+        .typo-ol ol,
+        .typo-ol ul,
+        .typo-ul ol,
+        .typo-ul ul,
+        .typo li ol,
+        .typo li ul {
+            margin-bottom: .8em;
+            margin-left: 2em
+        }
+
+        .typo-ol ul,
+        .typo-ul ul,
+        .typo li ul {
+            list-style: circle
+        }
+
+        .typo-table td,
+        .typo-table th,
+        .typo table caption,
+        .typo table td,
+        .typo table th {
+            border: 1px solid #ddd;
+            padding: .5em 1em;
+            color: #666
+        }
+
+        .typo-table th,
+        .typo table th {
+            background: #fbfbfb
+        }
+
+        .typo-table thead th,
+        .typo table thead th {
+            background: hsla(0, 0%, 95%, .7)
+        }
+
+        .typo table caption {
+            border-bottom: none
+        }
+
+        .typo-input,
+        .typo-textarea {
+            -webkit-appearance: none;
+            border-radius: 0
+        }
+
+        .typo-em,
+        .typo em,
+        caption,
+        legend {
+            color: #000;
+            font-weight: inherit
+        }
+
+        .typo-em {
+            position: relative
+        }
+
+        .typo-em:after {
+            position: absolute;
+            top: .65em;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            content: "\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB"
+        }
+
+        .typo img {
+            max-width: 100%
+        }
+
+        .common-content {
+            font-weight: 400;
+            color: #353535;
+            line-height: 1.75rem;
+            white-space: normal;
+            word-break: normal;
+            font-size: 1rem
+        }
+
+        .common-content img {
+            display: block;
+            max-width: 100%;
+            background-color: #eee
+        }
+
+        .common-content audio,
+        .common-content video {
+            width: 100%;
+            background-color: #eee
+        }
+
+        .common-content center,
+        .common-content font {
+            margin-top: 1rem;
+            display: inline-block
+        }
+
+        .common-content center {
+            width: 100%
+        }
+
+        .common-content pre {
+            margin-top: 1rem;
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+            overflow: hidden
+        }
+
+        .common-content pre code {
+            font-size: .8rem;
+            font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            overflow-x: auto
+        }
+
+        .common-content hr {
+            border: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #f5f5f5;
+            height: 1px;
+            background: none
+        }
+
+        .common-content b,
+        .common-content h1,
+        .common-content h2,
+        .common-content h3,
+        .common-content h4,
+        .common-content h5,
+        .common-content strong {
+            font-weight: 700
+        }
+
+        .common-content h1,
+        .common-content h2 {
+            font-size: 1.125rem;
+            margin-bottom: .45rem
+        }
+
+        .common-content h3,
+        .common-content h4,
+        .common-content h5 {
+            font-size: 1rem;
+            margin-bottom: .45rem
+        }
+
+        .common-content p {
+            font-weight: 400;
+            color: #353535;
+            margin-top: .15rem
+        }
+
+        .common-content .orange {
+            color: #ff5a05
+        }
+
+        .common-content .reference {
+            font-size: 1rem;
+            color: #888
+        }
+
+        .custom-rich-content h1 {
+            margin-top: 0;
+            font-weight: 400;
+            font-size: 15.25px;
+            border-bottom: 1px solid #eee;
+            line-height: 2.8
+        }
+
+        .custom-rich-content li,
+        .custom-rich-content p {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.6
+        }
+
+        table.hljs-ln {
+            margin-bottom: 0;
+            border-spacing: 0;
+            border-collapse: collapse
+        }
+
+        table.hljs-ln,
+        table.hljs-ln tbody,
+        table.hljs-ln td,
+        table.hljs-ln tr {
+            box-sizing: border-box
+        }
+
+        table.hljs-ln td {
+            padding: 0;
+            border: 0
+        }
+
+        table.hljs-ln td.hljs-ln-numbers {
+            min-width: 15px;
+            color: rgba(27, 31, 35, .3);
+            text-align: right;
+            white-space: nowrap;
+            cursor: pointer;
+            user-select: none
+        }
+
+        table.hljs-ln td.hljs-ln-code,
+        table.hljs-ln td.hljs-ln-numbers {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+            font-size: 12px;
+            line-height: 20px;
+            vertical-align: top
+        }
+
+        table.hljs-ln td.hljs-ln-code {
+            position: relative;
+            padding-right: 10px;
+            padding-left: 10px;
+            overflow: visible;
+            color: #24292e;
+            word-wrap: normal;
+            white-space: pre
+        }
+
+        video::-webkit-media-controls {
+            overflow: hidden !important
+        }
+
+        video::-webkit-media-controls-enclosure {
+            width: calc(100% + 32px);
+            margin-left: auto
+        }
+
+        ._29HP61GA_0 {
+            max-width:800px;
+            margin:0 auto;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #353535;
+            line-height: 1.76;
+            white-space: normal;
+            word-break: normal;
+            font-size: 17px;
+            -webkit-transition: background-color .3s ease;
+            transition: background-color .3s ease
+        }
+
+        ._29HP61GA_0 .MathJax_Display {
+            overflow: auto
+        }
+
+        ._29HP61GA_0 .poster {
+            position: fixed;
+            left: -10000px;
+            top: -10000px;
+            overflow: hidden;
+            padding: 1rem;
+            background: #ececec
+        }
+
+        ._29HP61GA_0 .richcontent-pre-copy {
+            font-size: 13px;
+            color: #888;
+            position: absolute;
+            right: 1em;
+            top: .5em;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        ._29HP61GA_0 .richcontent-pre-copy .iconfont {
+            font-size: 12px;
+            margin-right: .2em
+        }
+
+        ._29HP61GA_0 a {
+            color: #fa8919;
+            border-bottom: 1px solid #fa8919
+        }
+
+        ._29HP61GA_0 img {
+            display: block;
+            max-width: 100%;
+            position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            background-color: #eee;
+            vertical-align: top;
+            border-radius: 0
+        }
+
+        ._29HP61GA_0 audio,
+        ._29HP61GA_0 video {
+            width: 100%;
+            background-color: #eee
+        }
+
+        ._29HP61GA_0 pre {
+            margin-top: 16px;
+            padding: 34px 0 0;
+            margin-bottom: 30px;
+            position: relative;
+            border-radius: 6px;
+            background: rgba(246, 247, 251, .749);
+            border: 0
+        }
+
+        ._29HP61GA_0 pre code {
+            font-size: 12px;
+            font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+            display: block;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin-left: 16px;
+            margin-right: 16px;
+            overflow-x: scroll
+        }
+
+        ._29HP61GA_0 pre code:after {
+            content: "";
+            height: 30px;
+            width: 100%;
+            display: block
+        }
+
+        ._29HP61GA_0 hr {
+            border: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #f5f5f5;
+            height: 1px;
+            background: none
+        }
+
+        ._29HP61GA_0 h1,
+        ._29HP61GA_0 h2,
+        ._29HP61GA_0 h3,
+        ._29HP61GA_0 h4,
+        ._29HP61GA_0 h5 {
+            margin-bottom: 20px;
+            margin-top: 0;
+            font-weight: 700
+        }
+
+        ._29HP61GA_0 b,
+        ._29HP61GA_0 strong {
+            font-weight: 700
+        }
+
+        ._29HP61GA_0 h1 {
+            font-size: 21px
+        }
+
+        ._29HP61GA_0 h2 {
+            font-size: 20px
+        }
+
+        ._29HP61GA_0 h3 {
+            font-size: 19px
+        }
+
+        ._29HP61GA_0 h4 {
+            font-size: 18px
+        }
+
+        ._29HP61GA_0 h5 {
+            font-size: 17px
+        }
+
+        ._29HP61GA_0 center,
+        ._29HP61GA_0 p {
+            font-weight: 400;
+            color: #353535;
+            margin-top: 0;
+            margin-bottom: 30px;
+            word-break: break-word
+        }
+
+        ._29HP61GA_0 center {
+            text-align: center
+        }
+
+        ._29HP61GA_0 blockquote {
+            margin-top: 0;
+            margin-bottom: 34px;
+            border-left: 3px solid #e8e8e8;
+            padding-left: 17px;
+            color: #353535
+        }
+
+        ._29HP61GA_0 blockquote p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        ._29HP61GA_0 ol,
+        ._29HP61GA_0 ul {
+            margin-bottom: 30px
+        }
+
+        ._29HP61GA_0 ol p,
+        ._29HP61GA_0 ul p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        ._29HP61GA_0 ol {
+            list-style: decimal;
+            margin-left: 20px
+        }
+
+        ._29HP61GA_0 ul li {
+            padding-left: 17px;
+            position: relative;
+            margin-bottom: 10px
+        }
+
+        ._29HP61GA_0 ul li:after {
+            content: "";
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background: #353535;
+            position: absolute;
+            top: 10px;
+            left: 0
+        }
+
+        ._29HP61GA_0 .orange {
+            color: #fa8919
+        }
+
+        ._29HP61GA_0 .reference {
+            color: #888
+        }
+
+        ._29HP61GA_0 .m-right {
+            text-align: right
+        }
+
+        ._29HP61GA_0 .m-center {
+            text-align: center;
+            display: block
+        }
+
+        ._29HP61GA_0 .m-gray {
+            color: #888
+        }
+
+        ._29HP61GA_0 .m-small {
+            font-size: 15px
+        }
+
+        ._29HP61GA_0 table.hljs-ln {
+            margin-bottom: 0;
+            border-spacing: 0;
+            border-collapse: collapse
+        }
+
+        ._29HP61GA_0 table.hljs-ln,
+        ._29HP61GA_0 table.hljs-ln tbody,
+        ._29HP61GA_0 table.hljs-ln td,
+        ._29HP61GA_0 table.hljs-ln tr {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        ._29HP61GA_0 table.hljs-ln td {
+            padding: 0;
+            border: 0
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+            min-width: 15px;
+            font-size: 12px;
+            color: rgba(27, 31, 35, .3);
+            text-align: right;
+            white-space: nowrap;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-code,
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+            line-height: 20px;
+            vertical-align: top
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-code {
+            position: relative;
+            padding-right: 10px;
+            padding-left: 10px;
+            overflow: visible;
+            font-size: 13px;
+            color: #666;
+            word-wrap: normal;
+            white-space: pre
+        }
+
+    </style>
+</head>
+<body>
+<div class="_29HP61GA_0">
+<h1>20-Play&Teach：怎么摆脱“从入门到忘记”的学习困境？</h1>
+<p>你好，我是华仔。</p><p>上一讲我们学到了，针对不同技术维度的学习目标，可以分别采用不同的学习方法。</p><p>不过就算你用对了方法，在学习过程中往往还是会遇到一些难以解决的困难，导致学习变成了“从入门到忘记”。</p><p>那么，怎么摆脱这种的学习困境，保证学习效果呢？这一讲我会为你介绍两种方法。</p><h2>Play学习法</h2><p>从科学学习的角度来看，<strong>学以致用</strong>的效果是最好的，光学不练学得不深，时间一长可能就忘记了。</p><p>但我们在实践中会遇到一个常见的困难，那就是团队当前的工作任务当中并<strong>没有相关的实践机会</strong>。这种情况下，你学习某个技术就会陷入两难的困境：如果学的话，得不到实践，学得不深；如果不学的话，真的要用的时候又来不及了。</p><p>这时候怎么办呢？完全放弃肯定是不可取的，因为机会都是留给有准备的人，如果来了一个新的任务正好要用到某个技术，到时候肯定是团队内谁有准备就安排谁，不会等到某个人学习完了再安排任务给他。</p><p>所以，我们需要找到一种方法，在暂时没有实践机会的情况下也能学好技术，这就是<strong>Play学习法</strong>。</p><p>所谓Play学习法，就是<strong>通过模拟实践中的场景来进行学习和训练。</strong></p><p>华盛顿国家儿童博物馆有一句著名的馆训：<strong>What I hear, I forget. What I see, I remember. What I do, I understand.</strong></p><!-- [[[read_end]]] --><p>Play学习法就是主动创造Do的机会来提升自己对新技能的理解和记忆。</p><p>如果你喜欢看动物世界之类的节目，应该有这样的印象：狮子这类肉食动物，在成年以前特别喜欢玩耍打闹，这并不是贪玩，而是在练习捕猎的技巧，为成年后的真实捕猎做好部分准备。</p><p>Play学习法就和肉食动物的这种玩耍学习非常像。它的做法比较简单，主要分为三个步骤：</p><ol>
+<li>按照链式学习法的方式学习某项技术。</li>
+<li>列举常见的场景，搭建模拟场景。</li>
+<li>在模拟场景进行测试、体验和练习。</li>
+</ol><p>常见的模拟场景以及相应的作用如下表所示：</p><p><img src="https://static001.geekbang.org/resource/image/db/85/dba92075a01d457d81e28d15fa22c385.jpg" alt=""></p><p>Play学习法不但能够让你在没有实践机会的时候，也能够比较好地掌握一项技术，而且它跟直接在工作中实践的学习方式相比，还有一个独特的优势：<strong>你可以模拟各种在实践工作中很难出现、但只要出现就可能导致故障的场景。</strong></p><p>比如为了验证ZooKeeper的集群选举功能，模拟的时候可以采取拔网线、直接杀进程、删除存储文件等各种非常规的手段。</p><p>这些手段在线上运行肯定不敢手动去搞，甚至就算在开发阶段的测试环境中也不敢随便搞，因为一旦搞挂了恢复不了，就有可能导致项目延期，个人会需要承担责任。</p><p>而如果采用Play学习法的话，我们就可以通过模拟场景来积累相关的经验和技能，等到线上真正出现类似问题的时候就能够快速地处理。</p><p>Play学习法能够帮助我们更好的学习技术，但这并不意味着它能够完全取代工作中的实践，工作中的实践仍然是非常重要的提升自己的方式。</p><p>这就像小狮子光是通过玩耍打闹，还不能完全熟练地掌握捕猎技巧一样，年轻的狮子刚开始的捕猎的时候，成功率都是很低的。要成为真正的捕猎能手，还需要很多次实战的磨练。</p><p>如果说精通一项技术是100分的话，通过链式学习法你可以达到60分，通过Play学习法你可以达到70甚至80分，但如果想达到80分以上，实践是必不可少的。</p><h3>Play学习法小结</h3><p>现在，我们回顾一下Play学习法的重点：</p><ol>
+<li>Play学习法是通过模拟实践中的场景进行训练。</li>
+<li>Play学习法的步骤包括：按照链式学习法的方式学习某项技术；列举常见的场景，搭建模拟场景；在模拟场景进行测试、体验和练习。</li>
+<li>Play学习法的独特优势在于，可以模拟各种在实践工作中很难出现、但只要出现就可能导致故障的场景。</li>
+</ol><h2>Teach学习法</h2><p>除了缺少实践机会之外，我们在学习的时候还会遇到另一个常见的困难，那就是学得不深，理解不够透彻。</p><p>很多人都有类似的经历：自己学习某项技术的时候感觉学的差不多了，甚至都已经在工作中具体实践了，但是一旦跟别人讨论，或者在晋升的时候面对评委的提问，又会感觉很多东西都没有完全掌握。</p><p>这种现象背后的原因是，每个人的知识和技能都是有一定局限性的，不同的人理解会不一样，关注点会不一样，所以在讨论或者PK的时候自然会遇到各种各样的问题。就算你有实践机会，也不太可能一两次就把一项技术相关的知识全部用到，总会有认知的盲区存在。</p><p><img src="https://static001.geekbang.org/resource/image/89/c8/8919f65f0b0480yy8a978b7d3c6270c8.jpg" alt=""></p><p>我想你肯定不希望自己在晋升答辩的时候连自己熟悉的内容都回答不好。那要怎么办呢？Teach学习法就可以帮助你加深理解。</p><p>所谓Teach学习法，就是<strong>通过教别人来提升自己</strong>。</p><ul>
+<li>印度有句谚语：<strong>To learn，read. To know，write. To master，teach.</strong></li>
+<li>中国也有一句成语：<strong>教学相长</strong>。</li>
+</ul><p>结合这些智慧，我们可以总结出学习的四个主要方法：Read、Write、Do、Teach。前面介绍的Play学习法是关于Do的，而Teach学习法对应的则是Write和Teach。</p><p>我之所以把Write也算作Teach学习法的一部分，是因为教别人有两种方式，一种当面给别人进行培训，另一种是写成资料给别人阅读，比如书籍和在线课程。</p><p>所以，Teach学习法包括两种形式，写作和培训。</p><h3>写作</h3><p>很多人一听到“写作”两个字，第一反应就是要有文学天分，自己没有文学天分，所以文章就写不好，这其实是一个很大的误区。</p><p>技术文章的写作不是文学创作，不需要优美的文笔和有吸引力的情节，看技术文章的读者关注的也不是文字是否优美，情节是否吸引人，而是讲得清不清楚，讲得对不对。</p><p>如果你想写一篇技术文章，但是感觉不知道怎么写，那主要的原因不是不会写文章，而是还没有完整地掌握这个技术，不知道哪些是重点，不了解整个体系，对体系里面的各个部分的协作关系不清楚。</p><p>那么，是不是一定要等到把某个技术彻底搞明白后才能动笔呢？其实不需要，因为写作本身就是帮助我们学习和梳理的一个过程。比如我在写《从零开始学架构》这本书的时候，并不是把书中的每个内容都研究得一清二楚了才开始动笔的，而是先有了一个整体的构思，然后在写作的过程中边写边完善，有的内容是突然灵感爆发加上去的。</p><p>写作对学习的帮助主要体现在以下两个方面：</p><p><strong>第一，写作有助于系统地整理技术体系。</strong></p><p>当你开始准备写作的时候，肯定需要思考整体的结构应该如何设计，而这个思考的过程其实就是整理技术体系的过程。比如知名博主程序猿DD的<a href="http://blog.didispace.com/spring-boot-learning-2x/">Spring Boot2.X教程</a>的结构设计就清晰地反映出了他整理出来的技术体系。</p><p>只有当你脑海中形成了完整的技术体系，才能知道应该先讲什么，后讲什么；哪些是重点，哪些可以简单带过；是一篇文章讲完，还是讲一个系列。</p><p><img src="https://static001.geekbang.org/resource/image/6d/8a/6d517e5b88a251d1bd01dbe014ffe38a.png" alt="" title="程序猿DDSpring Boot2.X教程目录（部分）"></p><p><strong>第二，写作有助于了解细节。</strong></p><p>写作看起来只是把自己知道的东西用文字表达出来，但其实你在写作的时候大脑无时不刻都在思考：</p><p>这是什么意思？<br>
+这样说对么？<br>
+这里要给别人讲么？<br>
+为什么要这么说？<br>
+怎么样才能表达清楚？<br>
+……</p><p>所以，写作可以让你主动思考各种细节，一旦发现有疑问的地方，就会停下来去查证和研究。</p><p>我在写CAP原理相关的内容之前，也觉得自己在这方面已经理解得很清楚了，但是真正写的时候，看到“All nodes see the same data at the same time”这句话，却自然而然地产生了一个疑惑：</p><p><strong>通过网络复制总会有时间差，就算是1ms差异，那也不满足“at the same time”的说法，那么这里为什么这么说呢？</strong></p><p>经过研究和查证，我才了解到这里的说法确实不严谨。第一个原因是，在事务执行过程中，节点间的数据是不一致的，第二个原因是，CAP定理是忽略了网络延迟的（参考<a href="https://www.infoq.cn/article/cap-twelve-years-later-how-the-rules-have-changed/">《CAP 理论十二年回顾："规则"变了》</a>）。</p><p>等到我在写这一讲，介绍这个例子的时候，又想到了第三个可能的原因：CAP同时也忽略了复制的代价，比如将1K数据从A节点传输到B节点，B节点将1K数据写入存储也是需要时间的。</p><p>当然，绝大部分相关技术在网络上已经有很多文章了，那我们直接搜一篇看不是更香吗？为何非得要自己费时费力来写类似的内容呢？</p><p>原因在于，当我们看别人写的内容时，我们采取的方式其实是“read”，能吸收的可能只有30～50%，而自己写出来的话，即使内容是类似的，也能够让自己对技术的掌握程度达到60～70%。</p><p>可是，写作是需要投入时间的。如果每一项技术我们都用写文章的方式来学的话，时间确实会不够用。那么，哪些技术应该自己写文章，哪些技术可以通过看书或者上网搜文章来学习呢？</p><p>核心的指导原则就是，<strong>看技术和自己工作的相关度</strong>，对于强相关的核心技术，自己写文章来学；而对于弱相关的非核心技术，可以通过阅读资料来学习。</p><p>比如，对Java服务端开发来说，JVM垃圾回收就是强相关的技术，而Linux系统编程就是弱相关的技术；而如果是在Linux平台用C/C++开发的话，Linux系统编程就是强相关的技术，Java的技术就是弱相关的技术。</p><h3>培训</h3><p>写作的时候，我们没有时间要求，没有现场压力，一句没写好可以重写，今天写不出来可以等到明天再写。</p><p>但是培训就不同，培训的时间是有限的，有现场压力，听众可能会提出各种意想不到的问题，所以培训对你的能力要求更高，但是锻炼效果也更好。</p><p>首先，要完成一场培训，你需要写培训材料。培训材料的准备过程就是一个写作的过程，写PPT这类培训材料，跟写Word文档比起来，也更能够锻炼你的总结、归纳和提炼的能力。写作带给你的帮助，培训也可以提供。</p><p>其次，培训需要你在有限的时间内讲清楚一个主题，你必须对这个主题掌握到一定的程度才可以做到，这就会强迫你去思考跟主题有关的各种信息和可能的问题；</p><p>另外，培训过程中，你会和听众进行各种交流，这些交流本身既能够促进你对培训内容的理解，也能够锻炼你的临场反应能力。</p><p>除了以上这些作用，培训还有一个好处是其他所有学习方法都不具备的，那就是<strong>为晋升答辩积累现场经验</strong>。</p><p>很多人晋升答辩失败，临场表现差也是一个重要的原因，比如说话紧张，讲PPT的时候忘词，问答的时候没有听明白评委问题就急于回答等等。</p><p>有的人归结于自己天生口才不行，心理承压能力太差，其实没有那么严重，毕竟晋升答辩不是TED演讲，评委也不是来看脱口秀的。答辩的临场表现不过关，主要还是因为平时缺少训练。</p><p>我之前带团队的时候，对于手底下准备申请晋升的人，我基本上都会强制要求他们做几次培训。通过这种方式训练3～4次以后，他们就很少在答辩的时候出现因为表达和临场发挥的问题而失败了。就算还是有一点点紧张，但因为之前通过培训锻炼了心理素质，所以不会影响到答辩效果。</p><h3>Teach学习法小结</h3><p>现在，我们回顾一下Teach学习法的重点：</p><ol>
+<li>Teach学习法是通过教别人来提升自己。</li>
+<li>Teach学习法包括两种形式，写作和培训。</li>
+<li>写作有助于系统地整理技术体系和了解细节。</li>
+<li>培训具备写作的优点之外，还能够强迫你去思考跟主题有关的各种信息和可能的问题，促进你对培训内容的理解，锻炼你的临场反应能力，为晋升答辩积累现场经验。</li>
+</ol><p><img src="https://static001.geekbang.org/resource/image/c8/37/c895a84fd184575yya13b05fed31ac37.jpg" alt=""></p><h2>思考题</h2><p>这就是今天的全部内容，留一道课后思考题给你吧。你是否有过“从入门到放弃”的学习经历？你觉得主要原因是什么？是否可以应用这一讲的哪个方法来改进？</p><p>欢迎你把答案写到留言区，和我一起讨论。相信经过深度思考的回答，也会让你对知识的理解更加深刻。<br>
+<img src="https://static001.geekbang.org/resource/image/0f/ee/0fd7588e4829d1f39f833a7yy918fdee.jpeg" alt=""></p><h2>精选留言：</h2>
+        <ul>
+        
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            术子米德  2021-01-13 12:44:01
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            🤔☕️🤔☕️🤔<br>怎么判断自己掌握技能的水平：<br>    A、能使用，能解决问题<br>    B、能表达，能表达清楚<br>    C、能判断出听众的水平，采用不同的表达形式，采用不同的表达层次 [5赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-13 17:00:24</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">能教会别人是最厉害的</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            jss  2021-01-24 16:55:33
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            对于写作这一点, 深有感触;  写文章可以促使自己去思考; <br>某个知识点是什么, 为什么这么做? 没有它的时候, 怎么处理的? 有了它之后, 带来什么好处;<br>怎么使用? 这个技术点如何实现的? 等等;<br>同时 在写文章的过程中, 往往会一个知识点引发另一个知识点, 有点类似 链式学习法;  一个又一个的问题会冒出来. 然后, 自己再一一解决. 并输出成文章. 会很有成就感!<br> [3赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-24 20:10:57</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">是的，除了比较耗费时间外，写作和培训效果真的非常好。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Y丶z  2021-01-13 07:21:20
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            所以不管怎么样，我们都需要花费大量的时间去学习一门技能（从阅读到构建知识体系，再到持久化到自己大脑），如果急于求成，带来的结果就是掌握不牢，然后一段时间忘记，最后几乎需要重头再来，得不偿失。 [2赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-13 16:55:19</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">学习方法再好，也不可能做到别人花10小时，用了某个学习方法后10分钟就可以搞定。<br><br>我提炼出这些学习方法能够让你减少50%甚至更多的时间，或者同样时间效果更好，所以说积累还是必不可少的</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            思亭  2021-01-13 00:14:09
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            干货满满，感恩 [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-13 16:55:29</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">知行合一，加油</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            周平  2021-02-01 19:53:50
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            文中提到了好几种学习方法，我都尝试过，还在形成自己的方法论中，没那么清晰。通过本文的学习，清晰了一些，感谢导师。<br><br><br>Play学习法:<br>我就是利用公司的平台，在干中学。这样收获很多。从一定程度上就是play学习法。<br>然后，系统学习是有很多知识点的，<br>然而，如果我该学某个知识点，但公司现在没有这个平台，或者说，工作内容和这个知识点不相关。我也就会把这个知识点放下了。<br>这样导致我的学习节奏跟着公司的工作进度走，不太容易形成自己的知识体系。也就是知识点都有，却没有机会串起来。<br><br><br>现在在写这段文字的时候，突然意识到了这个问题。这也是我一直在想的，为什么我的知识点很散的原因。<br><br><br>play学习法有一个点是，自己搭建模拟场景，在模拟场景进行测试、体验和练习。<br>这个就帮我解决了上述问题。<br><br>Teach学习法:<br>包括两个:写作 和 培训<br>我的感受:写作收获很大，就是输出倒逼输入，就是需要多花时间，也不要怕产出慢，毕竟没外人逼你。<br>培训，需要公司的环境支持，所以，如果有环境倒逼你去培训，是个好事儿。 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-02-01 21:37:13</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">写作最难的就是坚持，原因也是没人逼你，需要自己自律和坚持。<br><br>Play学习法适应于工作中暂时用不到但很可能用到的技术，等到机会到来的时候，谁准备多一点机会就是谁的了。<br><br>很多大厂在晋升的时候会考察晋升者培训的数量和质量，来验证其对团队的贡献，所以你从这个角度来想，自己就会更有动力了。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            jss  2021-01-24 17:01:52
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            Teach学习法中培训, 也可以自己讲给自己; 从而模拟给他人讲课.  (复述)<br>这样有助于梳理知识点, 讲得过程中, 也会可以反问自己为什么.  <br>当然, 实际效果还是比不上真正的培训; 真正的培训可以提供一些自己想不到的问题;  [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-24 20:11:38</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">自己给自己讲效果不明显，一定要给别人讲。<br><br>可以先团队内部几个人的分享，有经验和信心后再扩大范围。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            helloworld  2021-01-22 15:37:01
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            这篇写的也很赞, 感同身受, 受教了:) 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-22 16:17:34</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">一定要做到知行合一，你的体会会更深，加油</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Harvey  2021-01-14 12:45:34
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            你好，华仔<br>    关于从入门到忘记，这个章节感触颇深。我自己是一个不会学习的人，但发现这个事情的时间较晚，<br>以至于在职场中没有优势。为了解决这个问题开始主题学习，通过阅读学习类书籍、订阅得到和极课的专栏，也总结了一些思维框架和笔记。<br>    对于我而言怎么从入门到忘记，原因有四点：<br>    首先：没有学习目标（包括学习路径、学习方法），不知道自己需要学习到什么程度。<br>    其次：学会知识的错觉。比如：以为自己学了知识概念就等于学会了，而没有经过练习和工作中实践，这些知识对于我来说根本没有被消化，理解，对应华仔图中的知识留存率可能只有20%，在加上一段时间的遗忘，可想而知学习的效果。<br>    然后：工作实践中不使用该技能的核心技术。比如：学习了jvm的知识，掌握内存分配和调优，但作为一个业务开发者，所在的项目组也不需要jvm的优化，导致对jvm的优化也只能停留在自己的练习阶段，对于性能调优如果不定期练习的话还是可能遗忘。但也不是说不学了，有一个优势在下一次复习的时候你提取之前的知识会更快，理解更深刻。<br>    最后：学习混乱。比如一个月学习数据结构算法、mysql、redis。这样导致每一个都掌握一点，又掌握的不深刻。<br><br>    课程总结：<br>    两个方法 play和分享模式。<br>    对于play的学习模式，我的最大收获就是运用场景的方式让学习的效果更好，这个之前是没有考虑。<br>    对于场景学习我又想到了最近学习“得到脱不花的高效学习的方法”中也介绍了场景的必要，这两个可以做关联。在学习一个技能的时候要思考工作在什么时候运用这个技术，这就是一个场景，根据这个场景在思考要怎么学习。<br>    关于场景华仔也总结出了四个场景，具体的场景还需要结合自己的技能做一个具体的划分，找到适合自己的场景。<br>    最后最重要的一点就是，多在工作中实践，在合理的情况下运用最近所学的知识，这个合理就是不给项目组带来过多额外的工作量。<br>   <br>    关于分享。写作和培训。<br>    写作的好处不用多说。掌握一套写作的框架。剩下的就是时间的积累。<br>    培训对于我而言难度还是很大，因为培训需要用很多时间做这件事情。因为你做一次培训，如果是10个人来听，你花费的时间是11个人的时间，所以质量一定要高。可以把培训做一个简化比如同事之间的交流，午休时的讨论。<br>    <br>    感谢华仔的总结。<br>     
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-14 13:23:16</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">培训这个点，开始的时候可以在团队内周会上或者定期的内部分享，这个要求不高，出错也没问题，不需要太多的时间，也不需要漂亮的PPT，重点在于分享交流和讨论。<br><br>等你积累比较多了，经验比较丰富了，可以尝试公开培训，即：面向部门甚至公司的培训，当然，这个培训的要求就比较高了，不能出现明显的错误。<br><br>等你再有经验，已经有一定名气了，那么可以尝试外部交流培训演讲，这个要求当然更高了，一定要自己真的是掌握透彻了才会有机会。</div>
+</div>
+            
+    </div>
+</li>
+            </ul>
+</div>
+</body>
+</html>

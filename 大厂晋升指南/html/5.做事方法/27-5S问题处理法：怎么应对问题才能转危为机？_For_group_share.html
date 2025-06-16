@@ -1,0 +1,1024 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
+    <title>27-5S问题处理法：怎么应对问题才能转危为机？</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <style>
+        html {
+            color: #333;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-rendering: optimizelegibility;
+            font-family: Helvetica Neue, PingFang SC, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif
+        }
+
+        html.borderbox *,
+        html.borderbox :after,
+        html.borderbox :before {
+            box-sizing: border-box
+        }
+
+        article,
+        aside,
+        blockquote,
+        body,
+        button,
+        code,
+        dd,
+        details,
+        dl,
+        dt,
+        fieldset,
+        figcaption,
+        figure,
+        footer,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        header,
+        hr,
+        input,
+        legend,
+        li,
+        menu,
+        nav,
+        ol,
+        p,
+        pre,
+        section,
+        td,
+        textarea,
+        th,
+        ul {
+            margin: 0;
+            padding: 0
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        menu,
+        nav,
+        section {
+            display: block
+        }
+
+        audio,
+        canvas,
+        video {
+            display: inline-block
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, Helvetica, sans-serif
+        }
+
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            padding: 0;
+            border: 0
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        fieldset,
+        img {
+            border: 0
+        }
+
+        blockquote {
+            position: relative;
+            color: #999;
+            font-weight: 400;
+            border-left: 1px solid #1abc9c;
+            padding-left: 1em;
+            margin: 1em 3em 1em 2em
+        }
+
+        @media only screen and (max-width: 640px) {
+            blockquote {
+                margin: 1em 0
+            }
+        }
+
+        abbr,
+        acronym {
+            border-bottom: 1px dotted;
+            font-variant: normal
+        }
+
+        abbr {
+            cursor: help
+        }
+
+        del {
+            text-decoration: line-through
+        }
+
+        address,
+        caption,
+        cite,
+        code,
+        dfn,
+        em,
+        th,
+        var {
+            font-style: normal;
+            font-weight: 400
+        }
+
+        ol,
+        ul {
+            list-style: none
+        }
+
+        caption,
+        th {
+            text-align: left
+        }
+
+        q:after,
+        q:before {
+            content: ""
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative
+        }
+
+        :root sub,
+        :root sup {
+            vertical-align: baseline
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        a {
+            color: #1abc9c
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        .typo a {
+            border-bottom: 1px solid #1abc9c
+        }
+
+        .typo a:hover {
+            border-bottom-color: #555;
+            color: #555
+        }
+
+        .typo a:hover,
+        a,
+        ins {
+            text-decoration: none
+        }
+
+        .typo-u,
+        u {
+            text-decoration: underline
+        }
+
+        mark {
+            background: #fffdd1;
+            border-bottom: 1px solid #ffedce;
+            padding: 2px;
+            margin: 0 5px
+        }
+
+        code,
+        pre,
+        pre tt {
+            font-family: Courier, Courier New, monospace
+        }
+
+        pre {
+            background: hsla(0, 0%, 97%, .7);
+            border: 1px solid #ddd;
+            padding: 1em 1.5em;
+            display: block;
+            -webkit-overflow-scrolling: touch
+        }
+
+        hr {
+            border: none;
+            border-bottom: 1px solid #cfcfcf;
+            margin-bottom: .8em;
+            height: 10px
+        }
+
+        .typo-small,
+        figcaption,
+        small {
+            font-size: .9em;
+            color: #888
+        }
+
+        b,
+        strong {
+            font-weight: 700;
+            color: #000
+        }
+
+        [draggable] {
+            cursor: move
+        }
+
+        .clearfix:after,
+        .clearfix:before {
+            content: "";
+            display: table
+        }
+
+        .clearfix:after {
+            clear: both
+        }
+
+        .clearfix {
+            zoom: 1
+        }
+
+        .textwrap,
+        .textwrap td,
+        .textwrap th {
+            word-wrap: break-word;
+            word-break: break-all
+        }
+
+        .textwrap-table {
+            table-layout: fixed
+        }
+
+        .serif {
+            font-family: Palatino, Optima, Georgia, serif
+        }
+
+        .typo-dl,
+        .typo-form,
+        .typo-hr,
+        .typo-ol,
+        .typo-p,
+        .typo-pre,
+        .typo-table,
+        .typo-ul,
+        .typo dl,
+        .typo form,
+        .typo hr,
+        .typo ol,
+        .typo p,
+        .typo pre,
+        .typo table,
+        .typo ul,
+        blockquote {
+            margin-bottom: 1rem
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: PingFang SC, Helvetica Neue, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+            color: #000;
+            line-height: 1.35
+        }
+
+        .typo-h1,
+        .typo-h2,
+        .typo-h3,
+        .typo-h4,
+        .typo-h5,
+        .typo-h6,
+        .typo h1,
+        .typo h2,
+        .typo h3,
+        .typo h4,
+        .typo h5,
+        .typo h6 {
+            margin-top: 1.2em;
+            margin-bottom: .6em;
+            line-height: 1.35
+        }
+
+        .typo-h1,
+        .typo h1 {
+            font-size: 2em
+        }
+
+        .typo-h2,
+        .typo h2 {
+            font-size: 1.8em
+        }
+
+        .typo-h3,
+        .typo h3 {
+            font-size: 1.6em
+        }
+
+        .typo-h4,
+        .typo h4 {
+            font-size: 1.4em
+        }
+
+        .typo-h5,
+        .typo-h6,
+        .typo h5,
+        .typo h6 {
+            font-size: 1.2em
+        }
+
+        .typo-ul,
+        .typo ul {
+            margin-left: 1.3em;
+            list-style: disc
+        }
+
+        .typo-ol,
+        .typo ol {
+            list-style: decimal;
+            margin-left: 1.9em
+        }
+
+        .typo-ol ol,
+        .typo-ol ul,
+        .typo-ul ol,
+        .typo-ul ul,
+        .typo li ol,
+        .typo li ul {
+            margin-bottom: .8em;
+            margin-left: 2em
+        }
+
+        .typo-ol ul,
+        .typo-ul ul,
+        .typo li ul {
+            list-style: circle
+        }
+
+        .typo-table td,
+        .typo-table th,
+        .typo table caption,
+        .typo table td,
+        .typo table th {
+            border: 1px solid #ddd;
+            padding: .5em 1em;
+            color: #666
+        }
+
+        .typo-table th,
+        .typo table th {
+            background: #fbfbfb
+        }
+
+        .typo-table thead th,
+        .typo table thead th {
+            background: hsla(0, 0%, 95%, .7)
+        }
+
+        .typo table caption {
+            border-bottom: none
+        }
+
+        .typo-input,
+        .typo-textarea {
+            -webkit-appearance: none;
+            border-radius: 0
+        }
+
+        .typo-em,
+        .typo em,
+        caption,
+        legend {
+            color: #000;
+            font-weight: inherit
+        }
+
+        .typo-em {
+            position: relative
+        }
+
+        .typo-em:after {
+            position: absolute;
+            top: .65em;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            content: "\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB"
+        }
+
+        .typo img {
+            max-width: 100%
+        }
+
+        .common-content {
+            font-weight: 400;
+            color: #353535;
+            line-height: 1.75rem;
+            white-space: normal;
+            word-break: normal;
+            font-size: 1rem
+        }
+
+        .common-content img {
+            display: block;
+            max-width: 100%;
+            background-color: #eee
+        }
+
+        .common-content audio,
+        .common-content video {
+            width: 100%;
+            background-color: #eee
+        }
+
+        .common-content center,
+        .common-content font {
+            margin-top: 1rem;
+            display: inline-block
+        }
+
+        .common-content center {
+            width: 100%
+        }
+
+        .common-content pre {
+            margin-top: 1rem;
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+            overflow: hidden
+        }
+
+        .common-content pre code {
+            font-size: .8rem;
+            font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            overflow-x: auto
+        }
+
+        .common-content hr {
+            border: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #f5f5f5;
+            height: 1px;
+            background: none
+        }
+
+        .common-content b,
+        .common-content h1,
+        .common-content h2,
+        .common-content h3,
+        .common-content h4,
+        .common-content h5,
+        .common-content strong {
+            font-weight: 700
+        }
+
+        .common-content h1,
+        .common-content h2 {
+            font-size: 1.125rem;
+            margin-bottom: .45rem
+        }
+
+        .common-content h3,
+        .common-content h4,
+        .common-content h5 {
+            font-size: 1rem;
+            margin-bottom: .45rem
+        }
+
+        .common-content p {
+            font-weight: 400;
+            color: #353535;
+            margin-top: .15rem
+        }
+
+        .common-content .orange {
+            color: #ff5a05
+        }
+
+        .common-content .reference {
+            font-size: 1rem;
+            color: #888
+        }
+
+        .custom-rich-content h1 {
+            margin-top: 0;
+            font-weight: 400;
+            font-size: 15.25px;
+            border-bottom: 1px solid #eee;
+            line-height: 2.8
+        }
+
+        .custom-rich-content li,
+        .custom-rich-content p {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.6
+        }
+
+        table.hljs-ln {
+            margin-bottom: 0;
+            border-spacing: 0;
+            border-collapse: collapse
+        }
+
+        table.hljs-ln,
+        table.hljs-ln tbody,
+        table.hljs-ln td,
+        table.hljs-ln tr {
+            box-sizing: border-box
+        }
+
+        table.hljs-ln td {
+            padding: 0;
+            border: 0
+        }
+
+        table.hljs-ln td.hljs-ln-numbers {
+            min-width: 15px;
+            color: rgba(27, 31, 35, .3);
+            text-align: right;
+            white-space: nowrap;
+            cursor: pointer;
+            user-select: none
+        }
+
+        table.hljs-ln td.hljs-ln-code,
+        table.hljs-ln td.hljs-ln-numbers {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+            font-size: 12px;
+            line-height: 20px;
+            vertical-align: top
+        }
+
+        table.hljs-ln td.hljs-ln-code {
+            position: relative;
+            padding-right: 10px;
+            padding-left: 10px;
+            overflow: visible;
+            color: #24292e;
+            word-wrap: normal;
+            white-space: pre
+        }
+
+        video::-webkit-media-controls {
+            overflow: hidden !important
+        }
+
+        video::-webkit-media-controls-enclosure {
+            width: calc(100% + 32px);
+            margin-left: auto
+        }
+
+        ._29HP61GA_0 {
+            max-width:800px;
+            margin:0 auto;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #353535;
+            line-height: 1.76;
+            white-space: normal;
+            word-break: normal;
+            font-size: 17px;
+            -webkit-transition: background-color .3s ease;
+            transition: background-color .3s ease
+        }
+
+        ._29HP61GA_0 .MathJax_Display {
+            overflow: auto
+        }
+
+        ._29HP61GA_0 .poster {
+            position: fixed;
+            left: -10000px;
+            top: -10000px;
+            overflow: hidden;
+            padding: 1rem;
+            background: #ececec
+        }
+
+        ._29HP61GA_0 .richcontent-pre-copy {
+            font-size: 13px;
+            color: #888;
+            position: absolute;
+            right: 1em;
+            top: .5em;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        ._29HP61GA_0 .richcontent-pre-copy .iconfont {
+            font-size: 12px;
+            margin-right: .2em
+        }
+
+        ._29HP61GA_0 a {
+            color: #fa8919;
+            border-bottom: 1px solid #fa8919
+        }
+
+        ._29HP61GA_0 img {
+            display: block;
+            max-width: 100%;
+            position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            background-color: #eee;
+            vertical-align: top;
+            border-radius: 0
+        }
+
+        ._29HP61GA_0 audio,
+        ._29HP61GA_0 video {
+            width: 100%;
+            background-color: #eee
+        }
+
+        ._29HP61GA_0 pre {
+            margin-top: 16px;
+            padding: 34px 0 0;
+            margin-bottom: 30px;
+            position: relative;
+            border-radius: 6px;
+            background: rgba(246, 247, 251, .749);
+            border: 0
+        }
+
+        ._29HP61GA_0 pre code {
+            font-size: 12px;
+            font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+            display: block;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin-left: 16px;
+            margin-right: 16px;
+            overflow-x: scroll
+        }
+
+        ._29HP61GA_0 pre code:after {
+            content: "";
+            height: 30px;
+            width: 100%;
+            display: block
+        }
+
+        ._29HP61GA_0 hr {
+            border: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #f5f5f5;
+            height: 1px;
+            background: none
+        }
+
+        ._29HP61GA_0 h1,
+        ._29HP61GA_0 h2,
+        ._29HP61GA_0 h3,
+        ._29HP61GA_0 h4,
+        ._29HP61GA_0 h5 {
+            margin-bottom: 20px;
+            margin-top: 0;
+            font-weight: 700
+        }
+
+        ._29HP61GA_0 b,
+        ._29HP61GA_0 strong {
+            font-weight: 700
+        }
+
+        ._29HP61GA_0 h1 {
+            font-size: 21px
+        }
+
+        ._29HP61GA_0 h2 {
+            font-size: 20px
+        }
+
+        ._29HP61GA_0 h3 {
+            font-size: 19px
+        }
+
+        ._29HP61GA_0 h4 {
+            font-size: 18px
+        }
+
+        ._29HP61GA_0 h5 {
+            font-size: 17px
+        }
+
+        ._29HP61GA_0 center,
+        ._29HP61GA_0 p {
+            font-weight: 400;
+            color: #353535;
+            margin-top: 0;
+            margin-bottom: 30px;
+            word-break: break-word
+        }
+
+        ._29HP61GA_0 center {
+            text-align: center
+        }
+
+        ._29HP61GA_0 blockquote {
+            margin-top: 0;
+            margin-bottom: 34px;
+            border-left: 3px solid #e8e8e8;
+            padding-left: 17px;
+            color: #353535
+        }
+
+        ._29HP61GA_0 blockquote p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        ._29HP61GA_0 ol,
+        ._29HP61GA_0 ul {
+            margin-bottom: 30px
+        }
+
+        ._29HP61GA_0 ol p,
+        ._29HP61GA_0 ul p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        ._29HP61GA_0 ol {
+            list-style: decimal;
+            margin-left: 20px
+        }
+
+        ._29HP61GA_0 ul li {
+            padding-left: 17px;
+            position: relative;
+            margin-bottom: 10px
+        }
+
+        ._29HP61GA_0 ul li:after {
+            content: "";
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background: #353535;
+            position: absolute;
+            top: 10px;
+            left: 0
+        }
+
+        ._29HP61GA_0 .orange {
+            color: #fa8919
+        }
+
+        ._29HP61GA_0 .reference {
+            color: #888
+        }
+
+        ._29HP61GA_0 .m-right {
+            text-align: right
+        }
+
+        ._29HP61GA_0 .m-center {
+            text-align: center;
+            display: block
+        }
+
+        ._29HP61GA_0 .m-gray {
+            color: #888
+        }
+
+        ._29HP61GA_0 .m-small {
+            font-size: 15px
+        }
+
+        ._29HP61GA_0 table.hljs-ln {
+            margin-bottom: 0;
+            border-spacing: 0;
+            border-collapse: collapse
+        }
+
+        ._29HP61GA_0 table.hljs-ln,
+        ._29HP61GA_0 table.hljs-ln tbody,
+        ._29HP61GA_0 table.hljs-ln td,
+        ._29HP61GA_0 table.hljs-ln tr {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        ._29HP61GA_0 table.hljs-ln td {
+            padding: 0;
+            border: 0
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+            min-width: 15px;
+            font-size: 12px;
+            color: rgba(27, 31, 35, .3);
+            text-align: right;
+            white-space: nowrap;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-code,
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+            line-height: 20px;
+            vertical-align: top
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-code {
+            position: relative;
+            padding-right: 10px;
+            padding-left: 10px;
+            overflow: visible;
+            font-size: 13px;
+            color: #666;
+            word-wrap: normal;
+            white-space: pre
+        }
+
+    </style>
+</head>
+<body>
+<div class="_29HP61GA_0">
+<h1>27-5S问题处理法：怎么应对问题才能转危为机？</h1>
+<p>你好，我是华仔。</p><p>上一讲我介绍了5W根因分析法，教你通过追问5个为什么来找到问题的根本原因。不过，找到原因不等于解决问题。</p><p>这就好比大夫看病，光是看出来患者的病根在心脏还不够，还要明确心脏到底出了什么毛病，是只用服药还是需要做手术，如果要安排手术，具体要怎么操刀。</p><p>处理问题也是这样，它是一个复杂的系统工程，既能够反映你的专业能力，又能够反映出你的综合能力。所以问题既有可能成为拖垮你绩效的陷阱，也有可能成为你晋升的机遇，关键在于你如何有效地去处理。</p><p>那么问题到底要怎么处理呢？我总结了一个5S问题处理法，也就是把处理问题的过程分为5个步骤：<strong>明确问题（Specify）、拆解问题（Split）、定位问题（Seek）、解决问题（Solve）和落地行动（Sort）</strong>，从而化危为机。</p><p><img src="https://static001.geekbang.org/resource/image/07/db/07bbe6a9f5yy252c6b27bc8b7025ffdb.jpg" alt=""></p><p>接下来，我会为你逐一讲解这5个步骤。</p><h2>第一步：明确问题（Specify）</h2><p>第一个步骤是，<strong>明确问题</strong>。</p><p>我有个朋友曾经遇到过这样的情况：</p><p>领导跟他说，最近团队士气好像不高。他立刻分析了8点原因，并提出了针对性的改进意见，还觉得自己反应很快，能力很强。</p><p>然后领导就让他负责提升士气，于是他组织培训和团队活动，搞各种评奖，推出各种新制度……干了一大堆事儿。</p><!-- [[[read_end]]] --><p>结果半年后，老板说，感觉士气还是没什么变化。</p><p>这其实是很多人都会犯的第一个错误：<strong>问题本身都没有明确定义，就直接开始采取行动。</strong>结果很可能就是，你做了很多事情，但无法衡量。</p><p>所以你一定要提醒自己，在解决问题之前，先要明确问题。（这本来是不言而喻的道理，但是在实际工作中我们往往容易忘记。）</p><p>怎么明确呢？根据问题有没有用数据量化，可以分为两种情况。</p><h3>量化了的问题</h3><p>首先，对于已经用数据量化的问题，关键在于<strong>确认数据是否准确</strong>。</p><p>通过数据来展现问题是比较直观的，而且很多人认为“数据不会撒谎”，所以他们看到数据之后就直接开始处理。</p><p>但其实这种情况也是需要明确问题的。因为数据可能出错，出错的原因有很多种，可能是源数据出错，也可能是计算时出错。</p><p>我就多次遇到过报表系统出问题导致业务数据异常的情况；也遇到过统计部门调整算法但是引入bug，从而导致数据错误的情况。</p><p>怎么确认数据是否准确呢？最方便的方法当然是<strong>让数据部门去核对</strong>，但是可能耗时比较长；而最快速的方法则是<strong>通过多个关联数据互相验证</strong>。</p><p>以互联网电商业务为例，如果<strong>月销售收入</strong>下降了20%，但是<strong>月订单量</strong>和<strong>月活用户</strong>（MAU，Monthly Active User）都在增长，那么很可能是销售收入的数据统计出了问题。</p><h3>没有量化的问题</h3><p>其次，对于没有用数据量化的问题，又可以分为两类。</p><p>一类是<strong>可以量化但是还没量化的</strong>，比如“业务增长放缓”，其中的“放缓”到底是什么意思，是增长速度从100%下降到60%，还是增长速度从10%下降到6%？不同的人理解可能千差万别。</p><p>对于这一类问题，你把量化的环节补上就行了。比如老板说：“我对当前的利润增长速度不满意，希望更快一点。”你就要明确，老板关注的指标是季度增长率还是月增长率？更快一些具体是多快，20%还是50%还是200%？</p><p>另一类是无法简单量化的，比如“团队士气不高”，其中的“士气”只是一种主观感受，很难量化。</p><p>所以这类问题是最棘手的，一是士气不高也许只是领导自己的感受有问题，并不是真的存在这个现象；二是就算真的士气不高，改善的效果也很难衡量。</p><p>你怎么证明你提高了士气，又怎么证明士气到底提高了多少呢？</p><p>直接用数据来衡量肯定是不现实的。经过实践摸索，我发现<strong>调查问卷</strong>是一种比较有效的方法。既然是主观感受，那我们就综合大多数人的主观感受来得到一个相对客观的评价。</p><p>这就像一部电影好不好，虽然不能用片长、投资金额或明星数量来衡量，但是如果看过的观众都来打分，最后综合算出一个分数，还是有一定参考意义的。而且评价的人越多，越能客观地反映影片的质量，这也是豆瓣等平台的价值。</p><p>调查问卷的设计技巧总结如下：</p><ol>
+<li>问题数量在10～15个左右，太少会导致问题分析不全面，太多会导致被调查的人不想答。</li>
+<li>问卷数量至少10份以上，太少会导致单个样本对整体结果影响太大。</li>
+<li>尽量用选择题，开放性问题不要超过3个，因为没几个人会认真回答开放性问题。</li>
+<li>评分用1～5分，不要用1～10分，用10分制的话，区别度不大，平均分基本都是7～8分。</li>
+</ol><p>如果你的P8或P9级别的领导让你帮他分析一下团队的士气，那么你可以这样设计调查问卷：</p><p><img src="https://static001.geekbang.org/resource/image/f3/c2/f39e6e3dd97a990f852499730fc044c2.jpg" alt=""></p><p>注：仅为示例，实际的问卷内容要更多一些。</p><p>基于多份问卷的结果，就能在一定程度上分析出团队士气情况和整体成员的认知情况，从而避免个人主观判断的偏差。</p><p>不过，如果团队的人数很少，就不要用调查问卷了。比如你是P7的Team Leader，手底下带了5个人，现在你觉得团队士气不高，可以直接找他们一个一个聊，这样效果更好。</p><h2>第二步：拆解问题（Split）</h2><p>第二个步骤是，<strong>拆解问题</strong>。</p><p>明确问题之后，你是不是就准备急着去分析原因了呢？毕竟你是负责人，领导还等着你的答案呢。</p><p>这就是很多人都会犯的第二个错误：<strong>把自己当成拯救世界的超级英雄，以为可以一个人搞定所有的事情</strong>。</p><p>如果问题很简单，那么确实可以这样做。但大部分问题其实是比较复杂的，甚至有的问题看起来很简单，实际上可能涉及很多方面，如果你只靠自己一个人去分析，也许花了很长时间都搞不定。</p><p>所以为了能够更高效地分析问题和更快地给出解决方案，你要学会拆解问题。</p><p>具体的做法是，对问题进行初步的分析，将大问题拆解为几个独立的子问题，然后再根据子问题的数量和规模，看看是否需要申请更多人力资源来一起参与问题处理。</p><p>简单来说，就是<strong>不要单打独斗，要学会利用团队力量</strong>。</p><p>至于按照什么维度拆解，这就和问题本身有关了。业务类的问题，可以按照业务类型来拆解，也可以按照客户群体来拆解；管理类的问题可以按照流程来拆解，也可以按照事项分类来拆解。</p><p>拆解问题有几个常见的小技巧：</p><ol>
+<li>拆解出来的子问题数量2～5个，拆太多了就很难保证互相独立。</li>
+<li>拆解出来的子问题尽量互相独立。</li>
+<li>明确子问题负责人，组成工作组，定期向上汇报进展。</li>
+</ol><p>比如电商业务的“订单数下降30%”，你可以按照业务类型来拆解，看看不同品类各自下降了多少。</p><p>经过分析，你可能会发现，“男装下降了20%”、“鞋类下降了30%”、“食品下降了20%”，其它品类的数据还是增长的。</p><p>于是，“订单数下降30%”这个大问题拆解成了3个子问题，你可以分别协调对应的运营负责人来一起处理。</p><p>又比如“团队研发效率不高”，经过调研发现，团队反馈最多的前4个问题是“会议太多”“测试环境不足”“发布太麻烦了”和“需求变更太频繁”。</p><p>如果你一个人搞不定这4个子问题，你可以分别协调项目经理、测试负责人、运维负责人和产品负责人来一起处理。</p><h2>第三步：定位问题（Seek）</h2><p>第三个步骤是，<strong>定位问题</strong>。</p><p>我曾听过这样的案例：</p><p>半年的业务买量数据不升反降，老板让运营负责人赶紧想办法。于是他连夜构思解决方案，提出了几个大展拳脚的方案，比如SEO优化、增加更多渠道等。</p><p>老板大手一挥批准其中3个方案，半年后一看，投入多了几千万，买量的数据却没有多大起色，老板脸色很难看。</p><p>这就是很多人都会犯第三个错误：<strong>没有找到根本原因的情况下，就急于给出解决方案</strong>。</p><p>如果你只找到了表层原因，那么后续提出的方案就是无法从根本上解决问题，只能白白浪费时间和资源。</p><p>定位问题的技巧就是<strong>5W根因分析法</strong>，我在26讲已经介绍过了。需要注意的是，根本原因可能不止一个，不同的追问线索可能找到不同的根本原因。</p><p>比如“加班太多导致士气不高”，我们也许可以得到两个根本原因：“市面上的Go程序员较少” 和 “没有项目经理”。</p><blockquote>
+<p>问题1：为什么士气不高？<br>
+答：因为加班太多。<br>
+&nbsp;<br>
+问题2：为什么加班太多？<br>
+答：因为人力不够。<br>
+&nbsp;<br>
+问题3：为什么人力不够？<br>
+答：因为招聘困难。<br>
+&nbsp;<br>
+问题4：为什么招聘困难？<br>
+答：因为市面上的Go程序员太少。</p>
+</blockquote><p>针对“市面上的Go程序员太少”这个根本原因，对应的解决方案可以是“招聘C/C++程序员然后培养成Go程序员”。</p><p>接下来是沿着另一条线索追问的情况：</p><blockquote>
+<p>问题1：为什么士气不高？<br>
+答：因为加班太多。<br>
+&nbsp;<br>
+问题2：为什么加班太多？<br>
+答：因为项目执行混乱。<br>
+&nbsp;<br>
+问题3：为什么项目执行混乱？<br>
+答：因为没有项目经理。</p>
+</blockquote><p>针对“没有项目经理”这个根本原因，对应的解决方案可以是“招聘专职项目经理”。</p><h2>第四步：解决问题（Solve）</h2><p>第四个步骤是，解决问题。</p><p>定位出问题的根本原因之后，你就需要提出问题的解决方案。</p><p>解决方案往往涉及资源的投入（增加广告投入预算）、组织的调整（成立专项小组）和系统的增强（增加配置检查功能防止运营配置出错）等，所以你需要得到上级的认可和支持。</p><p>这时很多人都会犯第四个错误：<strong>思维比较局限，只做了一个方案提交给上级。</strong></p><p>你信心满满地把自己的解决方案提交上去，本来希望得到赞赏，结果却发现上级有更多的想法或不同的方案，反而认为你考虑得不够周全。</p><p>那么，怎么做才能很快得到上级的认可和支持呢？</p><p>你需要提供多个方案，并且给出你建议的方案和原因，最终让上级来挑选和拍板。这就是我在第24讲介绍的<strong>3C方案设计法</strong>。</p><h2>第五步：落地行动（Sort）</h2><p>第五个步骤是，落地行动。</p><p>方案得到批准后，你就要落地执行，真正解决问题。很多人在这一步容易犯问题处理的第五个错误：<strong>做事没有重点和优先级，眉毛胡子一把抓</strong>。</p><p>在前面的步骤中，你可能拆解出了3个子问题，然后每个子问题分析出2～3个根因，每个根因分别给出了对应的解决方案，接着每个解决方案又可以分成3～5件事情来做。最后你发现，可以做的事情有几十件。</p><p>你可能会认为这些事情都是有价值的，所以用一张Excel表格全部记录下来，然后从第一件开始一件一件地去做。</p><p>但是这样做的结果很可能是，你做了几个月，但是却看不到什么效果。</p><p>因为每件事情的价值有大有小，见效时间有快有慢，<strong>你的领导并不关心你做了多少件事，他们关心的是，问题有没有真正解决</strong>。如果看不到明显的效果，就算你做得很辛苦，也很难得到认可。</p><p>正确的做法就是先做优先级排序，然后挑选优先级TOP N的事情去做，尽快看到成效，让问题不断地改善。</p><p>优先级排序的技巧总结如下：</p><ol>
+<li>可以按照阶段来进行优先级排序，并且顺序是可以调整的。比如前3个月TOP 3的事情是ABC，后3个月TOP 3的事情是XYZ。</li>
+<li>如果只有一个团队来做，建议挑选TOP3 ～ TOP5的事情来落地；如果多个团队合作，那么可以选TOP 10，每个团队负责其中2～3件事。</li>
+<li>短期按照紧急程度来挑选TOP N，长期按照重要程度来挑选TOP N。比如“运营配置URL出错”这个问题，短期内的TOP事项可以是“上线流程优化”，让测试来检查运营配置的内容；长期TOP事项可以是“后台管理系统优化”，增加配置URL合法性和有效性检查功能。</li>
+</ol><p>明确需要落地的TOP事项后，就可以用第25讲介绍的<strong>PDCA执行法</strong>来执行了。</p><h2>小结</h2><p>现在，我们回顾一下这一讲的重点内容：</p><ol>
+<li>5S问题处理法就是把处理问题的过程分为5个步骤：明确问题（Specify）、拆解问题（Split）、定位问题（Seek）、解决问题（Solve）和落地行动（Sort），从而化危为机。</li>
+<li>处理问题时容易犯的5个错误是：（1）问题本身都没有明确定义，就直接开始采取行动；（2）把自己当成拯救世界的超级英雄，期望可以一个人搞定所有的事情；（3）没有找到根本原因的情况下，就急于给出解决方案；（4）思维比较局限，只做了一个方案提交给上级；（5）做事没有重点和优先级，眉毛胡子一把抓。</li>
+<li>明确问题可以通过数据量化，也可以靠调研来衡量；拆解问题是为了发挥团队的力量；定位根因、提出方案和落地执行时，可以分别使用5W根因分析法、3C方案设计法和PDCA执行法。</li>
+</ol><p><img src="https://static001.geekbang.org/resource/image/56/56/56d21498fbb9e753f7e5e3cf249d9456.jpg" alt=""></p><h2>思考题</h2><p>这就是今天的全部内容，最后留一道课后思考题给你吧。你职业生涯中处理过的最棘手的问题是什么？你在处理过程中是否犯过某些错误？如果是学完这一讲之后再交给你处理，你会怎么做？</p><p>欢迎你把答案写到留言区，和我一起讨论。相信经过深度思考的回答，也会让你对知识的理解更加深刻。<br>
+<img src="https://static001.geekbang.org/resource/image/9a/f7/9a61a108cf2d0b5324a6657e80bb7ff7.jpeg" alt=""></p><h2>精选留言：</h2>
+        <ul>
+        
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            王同学  2021-02-01 13:17:17
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            最棘手的问题是多组配合，明确问题、拆解问题、定位问题、解决问题的方案都有了，但是落地行动的时候进度安排很困难。问题在本小组优先级很高，往往会有其它一个或几个小组觉得这个问题不是他们优先级最高的问题，导致进度一拖再拖，deadline也不断改变，最后问题悬而不决，还是没有彻底解决，而新的问题又来了，又要投入精力去解决新的问题 [4赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-02-01 13:53:35</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">学会利用上级的力量，最简单的方法就是写周报的时候把处理进展写出来，指明哪个组还没安排或者进度落后，负责人是谁，然后发给大领导，这招有奇效😂</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Jason  2021-02-01 09:41:25
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            我也遇到过接到任务不明确的情况，截止时间，交付质量之类都没有，比如“xxx事情跟进一下”。然后我问后明确的点，感觉也是临时拍脑袋给的。<br>     我的困惑如下，<br>    1.跟进一件事情，自己具体是需要做哪些事情？<br>    2.分任务应该是上级的日常工作吧，而且他们也知道任务背景之类更多的信息，这样的话为啥要下属自己去明确，而不在分下去的时候就一并说明？后面这种效率感觉更高。 [2赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-02-01 13:57:43</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">1.首先明确目标，时间点，输出，然后按照3C方案设计和PDCA方法执行<br><br>2. 一个原因是不同主管风格不同，另一个原因是有的时候主管也不知道详细的信息，需要你去澄清</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            溯  2021-02-01 09:58:07
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            首座？很棒，很接地气，上周刚发生运营url配置出错导致的线上问题，根本问题是配置域因为一些原因没做占位符格式检验，导致占位符填了一半，不过运行域有强检验，没发生线上事故，影响是该发出去的没发出去<br> [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-02-01 13:55:37</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">首座是什么梗？😄</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Single  2021-02-01 08:59:36
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            乍一看解决问题和落地行动是同一个环节，细品两者划分的特别好。解决问题从问题出发，从理论上给出复杂度可控的解法，是解决问题的指导思想，并得到大家的共识。落地行动是对解决方案的实操，去躺平各种细节。老板们往往觉得解决方案确定了，问题就马上解决了。开发们往往钻进细节不能自拔，所以一个事情做完后，难以描述做的好的或不好的地方。 [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-02-01 14:00:37</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">解决方案和执行事项要分开的，方案会包含多项可执行的任务，这些任务可能需要不同的人，不同的资源去执行</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            预测师  2021-02-11 11:18:55
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            方法这么多，您真的是这么执行的吗 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-02-11 18:46:33</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">都是我自己亲身实践并且验证有效的措施，当你有意识的去要求自己的时候，其实这些方法并不多，也很容易掌握</div>
+</div>
+            
+    </div>
+</li>
+            </ul>
+</div>
+</body>
+</html>

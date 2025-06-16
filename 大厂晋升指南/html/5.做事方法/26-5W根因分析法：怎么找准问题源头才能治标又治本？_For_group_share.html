@@ -1,0 +1,1050 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
+    <title>26-5W根因分析法：怎么找准问题源头才能治标又治本？</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <style>
+        html {
+            color: #333;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-rendering: optimizelegibility;
+            font-family: Helvetica Neue, PingFang SC, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif
+        }
+
+        html.borderbox *,
+        html.borderbox :after,
+        html.borderbox :before {
+            box-sizing: border-box
+        }
+
+        article,
+        aside,
+        blockquote,
+        body,
+        button,
+        code,
+        dd,
+        details,
+        dl,
+        dt,
+        fieldset,
+        figcaption,
+        figure,
+        footer,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        header,
+        hr,
+        input,
+        legend,
+        li,
+        menu,
+        nav,
+        ol,
+        p,
+        pre,
+        section,
+        td,
+        textarea,
+        th,
+        ul {
+            margin: 0;
+            padding: 0
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        menu,
+        nav,
+        section {
+            display: block
+        }
+
+        audio,
+        canvas,
+        video {
+            display: inline-block
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, Helvetica, sans-serif
+        }
+
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            padding: 0;
+            border: 0
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        fieldset,
+        img {
+            border: 0
+        }
+
+        blockquote {
+            position: relative;
+            color: #999;
+            font-weight: 400;
+            border-left: 1px solid #1abc9c;
+            padding-left: 1em;
+            margin: 1em 3em 1em 2em
+        }
+
+        @media only screen and (max-width: 640px) {
+            blockquote {
+                margin: 1em 0
+            }
+        }
+
+        abbr,
+        acronym {
+            border-bottom: 1px dotted;
+            font-variant: normal
+        }
+
+        abbr {
+            cursor: help
+        }
+
+        del {
+            text-decoration: line-through
+        }
+
+        address,
+        caption,
+        cite,
+        code,
+        dfn,
+        em,
+        th,
+        var {
+            font-style: normal;
+            font-weight: 400
+        }
+
+        ol,
+        ul {
+            list-style: none
+        }
+
+        caption,
+        th {
+            text-align: left
+        }
+
+        q:after,
+        q:before {
+            content: ""
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative
+        }
+
+        :root sub,
+        :root sup {
+            vertical-align: baseline
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        a {
+            color: #1abc9c
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        .typo a {
+            border-bottom: 1px solid #1abc9c
+        }
+
+        .typo a:hover {
+            border-bottom-color: #555;
+            color: #555
+        }
+
+        .typo a:hover,
+        a,
+        ins {
+            text-decoration: none
+        }
+
+        .typo-u,
+        u {
+            text-decoration: underline
+        }
+
+        mark {
+            background: #fffdd1;
+            border-bottom: 1px solid #ffedce;
+            padding: 2px;
+            margin: 0 5px
+        }
+
+        code,
+        pre,
+        pre tt {
+            font-family: Courier, Courier New, monospace
+        }
+
+        pre {
+            background: hsla(0, 0%, 97%, .7);
+            border: 1px solid #ddd;
+            padding: 1em 1.5em;
+            display: block;
+            -webkit-overflow-scrolling: touch
+        }
+
+        hr {
+            border: none;
+            border-bottom: 1px solid #cfcfcf;
+            margin-bottom: .8em;
+            height: 10px
+        }
+
+        .typo-small,
+        figcaption,
+        small {
+            font-size: .9em;
+            color: #888
+        }
+
+        b,
+        strong {
+            font-weight: 700;
+            color: #000
+        }
+
+        [draggable] {
+            cursor: move
+        }
+
+        .clearfix:after,
+        .clearfix:before {
+            content: "";
+            display: table
+        }
+
+        .clearfix:after {
+            clear: both
+        }
+
+        .clearfix {
+            zoom: 1
+        }
+
+        .textwrap,
+        .textwrap td,
+        .textwrap th {
+            word-wrap: break-word;
+            word-break: break-all
+        }
+
+        .textwrap-table {
+            table-layout: fixed
+        }
+
+        .serif {
+            font-family: Palatino, Optima, Georgia, serif
+        }
+
+        .typo-dl,
+        .typo-form,
+        .typo-hr,
+        .typo-ol,
+        .typo-p,
+        .typo-pre,
+        .typo-table,
+        .typo-ul,
+        .typo dl,
+        .typo form,
+        .typo hr,
+        .typo ol,
+        .typo p,
+        .typo pre,
+        .typo table,
+        .typo ul,
+        blockquote {
+            margin-bottom: 1rem
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: PingFang SC, Helvetica Neue, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+            color: #000;
+            line-height: 1.35
+        }
+
+        .typo-h1,
+        .typo-h2,
+        .typo-h3,
+        .typo-h4,
+        .typo-h5,
+        .typo-h6,
+        .typo h1,
+        .typo h2,
+        .typo h3,
+        .typo h4,
+        .typo h5,
+        .typo h6 {
+            margin-top: 1.2em;
+            margin-bottom: .6em;
+            line-height: 1.35
+        }
+
+        .typo-h1,
+        .typo h1 {
+            font-size: 2em
+        }
+
+        .typo-h2,
+        .typo h2 {
+            font-size: 1.8em
+        }
+
+        .typo-h3,
+        .typo h3 {
+            font-size: 1.6em
+        }
+
+        .typo-h4,
+        .typo h4 {
+            font-size: 1.4em
+        }
+
+        .typo-h5,
+        .typo-h6,
+        .typo h5,
+        .typo h6 {
+            font-size: 1.2em
+        }
+
+        .typo-ul,
+        .typo ul {
+            margin-left: 1.3em;
+            list-style: disc
+        }
+
+        .typo-ol,
+        .typo ol {
+            list-style: decimal;
+            margin-left: 1.9em
+        }
+
+        .typo-ol ol,
+        .typo-ol ul,
+        .typo-ul ol,
+        .typo-ul ul,
+        .typo li ol,
+        .typo li ul {
+            margin-bottom: .8em;
+            margin-left: 2em
+        }
+
+        .typo-ol ul,
+        .typo-ul ul,
+        .typo li ul {
+            list-style: circle
+        }
+
+        .typo-table td,
+        .typo-table th,
+        .typo table caption,
+        .typo table td,
+        .typo table th {
+            border: 1px solid #ddd;
+            padding: .5em 1em;
+            color: #666
+        }
+
+        .typo-table th,
+        .typo table th {
+            background: #fbfbfb
+        }
+
+        .typo-table thead th,
+        .typo table thead th {
+            background: hsla(0, 0%, 95%, .7)
+        }
+
+        .typo table caption {
+            border-bottom: none
+        }
+
+        .typo-input,
+        .typo-textarea {
+            -webkit-appearance: none;
+            border-radius: 0
+        }
+
+        .typo-em,
+        .typo em,
+        caption,
+        legend {
+            color: #000;
+            font-weight: inherit
+        }
+
+        .typo-em {
+            position: relative
+        }
+
+        .typo-em:after {
+            position: absolute;
+            top: .65em;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            content: "\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB"
+        }
+
+        .typo img {
+            max-width: 100%
+        }
+
+        .common-content {
+            font-weight: 400;
+            color: #353535;
+            line-height: 1.75rem;
+            white-space: normal;
+            word-break: normal;
+            font-size: 1rem
+        }
+
+        .common-content img {
+            display: block;
+            max-width: 100%;
+            background-color: #eee
+        }
+
+        .common-content audio,
+        .common-content video {
+            width: 100%;
+            background-color: #eee
+        }
+
+        .common-content center,
+        .common-content font {
+            margin-top: 1rem;
+            display: inline-block
+        }
+
+        .common-content center {
+            width: 100%
+        }
+
+        .common-content pre {
+            margin-top: 1rem;
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+            overflow: hidden
+        }
+
+        .common-content pre code {
+            font-size: .8rem;
+            font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            overflow-x: auto
+        }
+
+        .common-content hr {
+            border: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #f5f5f5;
+            height: 1px;
+            background: none
+        }
+
+        .common-content b,
+        .common-content h1,
+        .common-content h2,
+        .common-content h3,
+        .common-content h4,
+        .common-content h5,
+        .common-content strong {
+            font-weight: 700
+        }
+
+        .common-content h1,
+        .common-content h2 {
+            font-size: 1.125rem;
+            margin-bottom: .45rem
+        }
+
+        .common-content h3,
+        .common-content h4,
+        .common-content h5 {
+            font-size: 1rem;
+            margin-bottom: .45rem
+        }
+
+        .common-content p {
+            font-weight: 400;
+            color: #353535;
+            margin-top: .15rem
+        }
+
+        .common-content .orange {
+            color: #ff5a05
+        }
+
+        .common-content .reference {
+            font-size: 1rem;
+            color: #888
+        }
+
+        .custom-rich-content h1 {
+            margin-top: 0;
+            font-weight: 400;
+            font-size: 15.25px;
+            border-bottom: 1px solid #eee;
+            line-height: 2.8
+        }
+
+        .custom-rich-content li,
+        .custom-rich-content p {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.6
+        }
+
+        table.hljs-ln {
+            margin-bottom: 0;
+            border-spacing: 0;
+            border-collapse: collapse
+        }
+
+        table.hljs-ln,
+        table.hljs-ln tbody,
+        table.hljs-ln td,
+        table.hljs-ln tr {
+            box-sizing: border-box
+        }
+
+        table.hljs-ln td {
+            padding: 0;
+            border: 0
+        }
+
+        table.hljs-ln td.hljs-ln-numbers {
+            min-width: 15px;
+            color: rgba(27, 31, 35, .3);
+            text-align: right;
+            white-space: nowrap;
+            cursor: pointer;
+            user-select: none
+        }
+
+        table.hljs-ln td.hljs-ln-code,
+        table.hljs-ln td.hljs-ln-numbers {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+            font-size: 12px;
+            line-height: 20px;
+            vertical-align: top
+        }
+
+        table.hljs-ln td.hljs-ln-code {
+            position: relative;
+            padding-right: 10px;
+            padding-left: 10px;
+            overflow: visible;
+            color: #24292e;
+            word-wrap: normal;
+            white-space: pre
+        }
+
+        video::-webkit-media-controls {
+            overflow: hidden !important
+        }
+
+        video::-webkit-media-controls-enclosure {
+            width: calc(100% + 32px);
+            margin-left: auto
+        }
+
+        ._29HP61GA_0 {
+            max-width:800px;
+            margin:0 auto;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #353535;
+            line-height: 1.76;
+            white-space: normal;
+            word-break: normal;
+            font-size: 17px;
+            -webkit-transition: background-color .3s ease;
+            transition: background-color .3s ease
+        }
+
+        ._29HP61GA_0 .MathJax_Display {
+            overflow: auto
+        }
+
+        ._29HP61GA_0 .poster {
+            position: fixed;
+            left: -10000px;
+            top: -10000px;
+            overflow: hidden;
+            padding: 1rem;
+            background: #ececec
+        }
+
+        ._29HP61GA_0 .richcontent-pre-copy {
+            font-size: 13px;
+            color: #888;
+            position: absolute;
+            right: 1em;
+            top: .5em;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        ._29HP61GA_0 .richcontent-pre-copy .iconfont {
+            font-size: 12px;
+            margin-right: .2em
+        }
+
+        ._29HP61GA_0 a {
+            color: #fa8919;
+            border-bottom: 1px solid #fa8919
+        }
+
+        ._29HP61GA_0 img {
+            display: block;
+            max-width: 100%;
+            position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            background-color: #eee;
+            vertical-align: top;
+            border-radius: 0
+        }
+
+        ._29HP61GA_0 audio,
+        ._29HP61GA_0 video {
+            width: 100%;
+            background-color: #eee
+        }
+
+        ._29HP61GA_0 pre {
+            margin-top: 16px;
+            padding: 34px 0 0;
+            margin-bottom: 30px;
+            position: relative;
+            border-radius: 6px;
+            background: rgba(246, 247, 251, .749);
+            border: 0
+        }
+
+        ._29HP61GA_0 pre code {
+            font-size: 12px;
+            font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+            display: block;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin-left: 16px;
+            margin-right: 16px;
+            overflow-x: scroll
+        }
+
+        ._29HP61GA_0 pre code:after {
+            content: "";
+            height: 30px;
+            width: 100%;
+            display: block
+        }
+
+        ._29HP61GA_0 hr {
+            border: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #f5f5f5;
+            height: 1px;
+            background: none
+        }
+
+        ._29HP61GA_0 h1,
+        ._29HP61GA_0 h2,
+        ._29HP61GA_0 h3,
+        ._29HP61GA_0 h4,
+        ._29HP61GA_0 h5 {
+            margin-bottom: 20px;
+            margin-top: 0;
+            font-weight: 700
+        }
+
+        ._29HP61GA_0 b,
+        ._29HP61GA_0 strong {
+            font-weight: 700
+        }
+
+        ._29HP61GA_0 h1 {
+            font-size: 21px
+        }
+
+        ._29HP61GA_0 h2 {
+            font-size: 20px
+        }
+
+        ._29HP61GA_0 h3 {
+            font-size: 19px
+        }
+
+        ._29HP61GA_0 h4 {
+            font-size: 18px
+        }
+
+        ._29HP61GA_0 h5 {
+            font-size: 17px
+        }
+
+        ._29HP61GA_0 center,
+        ._29HP61GA_0 p {
+            font-weight: 400;
+            color: #353535;
+            margin-top: 0;
+            margin-bottom: 30px;
+            word-break: break-word
+        }
+
+        ._29HP61GA_0 center {
+            text-align: center
+        }
+
+        ._29HP61GA_0 blockquote {
+            margin-top: 0;
+            margin-bottom: 34px;
+            border-left: 3px solid #e8e8e8;
+            padding-left: 17px;
+            color: #353535
+        }
+
+        ._29HP61GA_0 blockquote p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        ._29HP61GA_0 ol,
+        ._29HP61GA_0 ul {
+            margin-bottom: 30px
+        }
+
+        ._29HP61GA_0 ol p,
+        ._29HP61GA_0 ul p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        ._29HP61GA_0 ol {
+            list-style: decimal;
+            margin-left: 20px
+        }
+
+        ._29HP61GA_0 ul li {
+            padding-left: 17px;
+            position: relative;
+            margin-bottom: 10px
+        }
+
+        ._29HP61GA_0 ul li:after {
+            content: "";
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background: #353535;
+            position: absolute;
+            top: 10px;
+            left: 0
+        }
+
+        ._29HP61GA_0 .orange {
+            color: #fa8919
+        }
+
+        ._29HP61GA_0 .reference {
+            color: #888
+        }
+
+        ._29HP61GA_0 .m-right {
+            text-align: right
+        }
+
+        ._29HP61GA_0 .m-center {
+            text-align: center;
+            display: block
+        }
+
+        ._29HP61GA_0 .m-gray {
+            color: #888
+        }
+
+        ._29HP61GA_0 .m-small {
+            font-size: 15px
+        }
+
+        ._29HP61GA_0 table.hljs-ln {
+            margin-bottom: 0;
+            border-spacing: 0;
+            border-collapse: collapse
+        }
+
+        ._29HP61GA_0 table.hljs-ln,
+        ._29HP61GA_0 table.hljs-ln tbody,
+        ._29HP61GA_0 table.hljs-ln td,
+        ._29HP61GA_0 table.hljs-ln tr {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        ._29HP61GA_0 table.hljs-ln td {
+            padding: 0;
+            border: 0
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+            min-width: 15px;
+            font-size: 12px;
+            color: rgba(27, 31, 35, .3);
+            text-align: right;
+            white-space: nowrap;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-code,
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+            line-height: 20px;
+            vertical-align: top
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-code {
+            position: relative;
+            padding-right: 10px;
+            padding-left: 10px;
+            overflow: visible;
+            font-size: 13px;
+            color: #666;
+            word-wrap: normal;
+            white-space: pre
+        }
+
+    </style>
+</head>
+<body>
+<div class="_29HP61GA_0">
+<h1>26-5W根因分析法：怎么找准问题源头才能治标又治本？</h1>
+<p>你好，我是华仔。</p><p>上一讲我介绍了PDCA执行法，它把执行过程分为四个环节。其中在检查（Check）环节，最容易出现的问题就是，分析原因的时候，<strong>只看到表层的原因，而没有去深挖深层的根本原因</strong>。</p><p>这就会导致我们给出的<strong>解决方案治标不治本</strong>，虽然短时间内做了应急处理，但是按下葫芦浮起瓢，相关的问题之后还会接连不断地冒出来。</p><h2>5W根因分析法</h2><p>怎么解决呢？这就要靠<strong>5W根因分析法</strong>了。它又叫<strong>5Why分析法</strong>或者<strong>丰田五问法</strong>，最初是由丰田集团创始人丰田佐吉提出的，后来成为丰田汽车公司获得成功的重要方法。（老板提出来的，应用也是自然的^_^）</p><p>那么，5W根因分析法到底是什么做的呢？根据丰田汽车公司前副社长大野耐一的描述，就是<strong>重复问五次“为什么”</strong>，问题的本质和解决办法就会变得显而易见。</p><p>大野耐一曾经举过这样一个例子：</p><blockquote>
+<p>问题1：为什么机器停了？<br>
+答：因为机器超载，保险丝烧断了。<br>
+&nbsp;<br>
+问题2：为什么机器会超载？<br>
+答：因为轴承的润滑不足。<br>
+&nbsp;<br>
+问题3：为什么轴承会润滑不足？<br>
+答：因为润滑泵失灵了。<br>
+&nbsp;<br>
+问题4：为什么润滑泵会失灵？<br>
+答：因为它的轮轴耗损了。<br>
+&nbsp;<br>
+问题5：为什么润滑泵的轮轴会耗损？<br>
+答：因为杂质跑到里面去了。</p>
+</blockquote><p>如果到了问题1就停止追问，那么工人的措施就是更换保险丝，一段时间后保险丝肯定还会烧断。</p><!-- [[[read_end]]] --><p>如果到了问题4就停止追问，那么工人的措施就是更换轮轴，一段时间后轮轴又会很快坏了。</p><p>只有当追问到了问题5，才能找出停机的根本原因，这时工人的措施就是给润滑泵加上防杂质的滤网，从而彻底解决问题。</p><p>现在，5W根因分析法在其他很多企业已经得到了广泛应用，并且融入到了各种管理方法中，比如<strong>持续改善法</strong>（日本持续改善之父今井正明提出）、<strong>精益生产法</strong>（美国学者研究丰田后提出的管理哲学）和<strong>六西格玛法</strong>（摩托罗拉提出的管理策略，杰克·韦尔奇推广到通用公司）等。</p><p>虽然它起源于生产过程中问题分析，但是作为一种思维方式，可以应用到很多场景，比如业务分析、技术学习和管理改进等。</p><p>接下来，我就针对这三类应用场景分别举例说明，这些都是我亲身经历的例子。</p><h2>业务分析</h2><p>第一个场景是业务分析。</p><p>在某交易平台的业务规划目标讨论会上，我通过3个为什么，了解到了业务目标背后的深层考虑。</p><blockquote>
+<p>问题1：为什么今年的业务目标是成交金额翻番？<br>
+答：因为只有成交金额翻番我们才能达到盈亏平衡点。<br>
+&nbsp;<br>
+问题2：为什么今年要求达到盈亏平衡点？<br>
+答：因为集团要求我们的业务能够自负盈亏。<br>
+&nbsp;<br>
+问题3：我们本质上还属于创新业务，为什么集团要求我们的业务能够自负盈亏？<br>
+答：因为疫情的影响，集团需要开源节流，减少非盈利业务的持续投入。</p>
+</blockquote><p>你可能觉得有些奇怪：怎么这个例子只问了3个为什么就结束了呢？</p><p>因为5个为什么只是一个形象的说法，实际操作中可以是3个，也可以是7个，关键在于通过追问找到根本原因。</p><p>虽然在这个例子中，我们还可以继续问下去，比如：“集团为什么要开源节流，创新业务难道不重要吗？”</p><p>但这样的问题，业务团队很难得到确切答案，因为集团的决策背景和讨论信息只有高层才知道，而且就算知道答案，也不会对业务规划目标的理解有更多的帮助。</p><h2>技术学习</h2><p>第二个场景是技术学习。</p><p>在某次Netty培训课上，我通过5个为什么，来验证大家是否真的深入理解了Netty网络高性能的核心原理。</p><blockquote>
+<p>问题1：为什么Netty网络处理性能高？<br>
+答：因为Netty采用了Reactor模式<br>
+&nbsp;<br>
+问题2：为什么用了Reactor模式性能就高？<br>
+答：因为Reactor模式是基于IO多路复用的事件驱动模式。<br>
+&nbsp;<br>
+问题3：为什么IO多路复用性能高？<br>
+答：因为IO多路复用既不会像阻塞IO那样没有数据的时候挂起工作线程，也不需要像非阻塞IO那样轮询判断是否有数据。<br>
+&nbsp;<br>
+问题4：为什么IO多路复用既不需要挂起工作线程，也不需要轮询？<br>
+答：因为IO多路复用可以在一个监控线程里面监控很多的连接，没有IO操作的时候只要挂起监控线程；只要其中有连接可以进行IO操作的时候，操作系统就会唤起监控线程进行处理。<br>
+&nbsp;<br>
+问题5：那还是会挂起监控线程啊，为什么这样做就性能高呢？<br>
+答：首先，如果采取阻塞工作线程的方式，对于Web这样的系统，并发的连接可能几万十几万，如果每个连接开一个线程的话，系统性能支撑不了；而如果用线程池的话，因为线程被阻塞的时候是不能用来处理其他连接，会出现等待线程的问题。<br>
+其次，线上单个系统的工作线程数配置可以达到几百上千，这样数量的线程频繁切换会有性能问题，而单个监控线程切换的性能影响可以忽略不计。<br>
+第三，工作线程没有IO操作的时候可以做其他事情，能够大大提升系统的整体性能。</p>
+</blockquote><p>这种场景在晋升答辩的时候也会经常发生。评委在考察申请者能力的时候，很喜欢用“夺命连环问”，连续追问为什么。如果平时没有训练和积累，你很可能被问到哑口无言的地步。</p><p>对于<strong>方案选择</strong>相关的问题，你可以用<a href="https://time.geekbang.org/column/article/336582">第24讲</a>介绍的<strong>3C方案设计法</strong>，让自己的思考更加全面，选择更加有理有据。</p><p>而对于<strong>技术深度</strong>相关的问题，你可以先按照<a href="https://time.geekbang.org/column/article/331463">第19讲</a>介绍的<strong>链式学习法</strong>学习某项技术，然后再搭配<strong>5W根因分析法</strong>来训练自己，多问自己一些为什么，把深层逻辑吃透。</p><p>这样在晋升答辩的时候，你就能从容应对，不用再害怕评委针对技术深度展开“夺命连环问”了。</p><h2>管理改进</h2><p>在某次项目延迟问题的讨论会上，我通过6个为什么，把项目延迟的核心原因找了出来。</p><blockquote>
+<p>问题1：为什么项目延迟了？<br>
+答：因为要等测试环境进行测试。<br>
+&nbsp;<br>
+问题2：为什么要等测试环境？<br>
+答：我们只有2套测试环境，2套都已经用于另外两个项目了。<br>
+&nbsp;<br>
+问题3：为什么只有2套测试环境，不能搭建多套吗？<br>
+答：现在没有机器用来搭测试环境了，而且我们有将近20个子系统，搭建一套可用的测试环境耗时可能要一周。<br>
+&nbsp;<br>
+问题4：为什么会没有机器，直接申请机器不就可以了？<br>
+答：运维今年的预算用完了，不能购买新机器了。<br>
+&nbsp;<br>
+问题5：为什么一定要用新机器，测试环境对机器性能要求高吗？<br>
+答：测试环境对机器性能要求不高，基本能跑就行。<br>
+&nbsp;<br>
+问题6：那为什么不找运维申请过保机器（使用超过3年的机器，即使没坏也要换掉）用来搭建测试环境？<br>
+答：之前没想过这个方案。</p>
+</blockquote><p>所以解决方案很简单，直接找运维借几台过保的机器用来搭建测试环境。</p><p>不过这还只是短期的解决方案，实际上在问题3的回答中，我们还可以发现另外一个问题：搭建一套环境太耗时了。</p><p>于是测试开发部启动了一个基于Docker的快速搭建环境的项目，项目完成后，任何一个开发或者测试同学花5分钟就能生成一套全新可用的环境。</p><h2>注意事项</h2><p>通过这3个例子，我想你已经理解了5W根因分析法的使用技巧。在实际应用的时候，我们还需要注意以下3点：</p><p><strong>1. 问题数量不是关键，找到根本原因才是关键</strong></p><p>在介绍业务分析这个例子的时候，我已经提到，5W或者说5个为什么只是一个形象的说法，3个也可以，7个也可以，关键在于找到根本原因。</p><p>所以一个最简单的提问方法就是：<strong>下一个问题是对上一个回答的进一步深入</strong>。</p><p>虽然数量可多可少，但我建议不要少于3个，因为凭借3个以下的为什么，大概率找不出根本原因；但是也不要多于7个，因为如果问了7个以上的为什么还没找到根本原因，那就要审视一下问题本身是不是有问题了，比如关注的焦点偏移，前面问的是A，后面变成了问B了。</p><p><strong>2. 首先要明确问题本身</strong></p><p>5W根因分析法起源于生产过程，通常情况下问题都是比较明显的，比如机器停机了或者次品率升高了。但是，还有很多情况下问题本身其实是不明确的，每个人的理解可能都不太一样。</p><p>如果没有明确问题就开始问为什么，无论问题多么精彩都没有意义，甚至越精彩离题越远。</p><p>比如“成交量大幅下降”，这个问题就不明确，到底下降10%、30%还是50%才算“大幅”？是同比下降还是环比下降？是某一个子业务下降很多，还是所有子业务都在下降？</p><p>如果这些问题都不明确就开始进行根因分析，就很可能得出一大堆似是而非的原因和改进措施。</p><p><strong>3.  避免变成大型“撕逼”现场</strong></p><p>在连续追问“为什么”的时候，如果双方没有对这个方法充分达成认识，被问的人很可能觉得你在挑战和质疑他，讨论的现场就会变成大型“撕逼”现场，最后闹得不欢而散。</p><p>所以在一开始的时候，就要先解释清楚，待会儿将采用5W根因分析法来探讨根本原因，避免挑起情绪对立，引发“撕逼”。</p><h2>小结</h2><p>现在，我们回顾一下这一讲的重点内容。</p><ol>
+<li>5W根因分析法就是通过追问5个为什么来分析问题的根本原因，从而得到彻底的解决方案。</li>
+<li>5W根因分析法起源于生产过程的问题原因分析，但也可以应用于业务分析、技术学习和管理改进等场景。</li>
+<li>使用5W根因分析法时要注意：首先要明确问题本身；问题数量不是关键，找到根本原因才是关键；避免变成大型“撕逼”现场。<br>
+<img src="https://static001.geekbang.org/resource/image/37/22/3748a2cedbyy5762dedb220f2ae35422.jpg" alt=""></li>
+</ol><h2>思考题</h2><p>这就是今天的全部内容，留一道课后思考题给你吧。</p><p>你是否经历过让自己印象深刻的挫折？试试用5W根因分析法自我分析一下原因，也许这次得出的答案会超出你原有的认知。</p><p>欢迎你把答案写到留言区，和我一起讨论。相信经过深度思考的回答，也会让你对知识的理解更加深刻。<br>
+<img src="https://static001.geekbang.org/resource/image/6f/c8/6ffedb6836e2fb2ac4bc11796a587ac8.jpeg" alt=""></p><h2>精选留言：</h2>
+        <ul>
+        
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            吴科🍀  2021-01-29 09:05:14
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            让我想起了，领导的灵魂拷问，一般是连续问3到5个问题，直到找到问题的本质。<br>这个方法适合上下级，或者自我审查。平级之间还真有可能，成了撕逼现场。<br>一定要对事不对人，否则真会不欢而散。 [7赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-29 10:51:34</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">是的，这个技能是管理者的基础技能，用来处理问题、挖掘根因、考察下属是比较好的</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Harvey  2021-01-29 23:52:34
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            你好，华仔：<br><br>    1.明确问题需要量化，我认为这个确实是个坑。好比别人让你做一件事情，说的很模糊，问多了你又担心别人认为你不聪明，导致信息不对称 。所以对这种问题需要自己整理一个处理问题的框架 问题的分类及解决方案。<br><br>    2.问题的源头一般情况下都能看到，比如项目延期，需求完成进度等。这些都有一些指标或者结果，适用复盘或者总结。<br><br>    3.如何终止提问也学到了一点，你或者团队不能掌控的事情，就可以终止了。<br>   <br>    4.请教一个问题？当5w的原因偏离了实际，又应该怎么解决呢？比如拿项目延期来说，有可能原因是个人能力不行，那么下一个问题就是为什么个人能力不行，因为加班没时间学习。这个问题链就全然不同。<br><br> [3赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-30 13:18:44</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">第2点：恰恰相反，很多时候源头并不容易看出来，需要去挖。<br><br>第4点：对于项目延期来说，问到个人能力不行已经够了；原因和你说的第3点收获是一样的，因为项目经理或者TL为了解决项目延期的问题，要做的要么就是加人，要么就是换人，不可能说培养这个能力不行的员工来避免项目延期，因为培养的时间和效果都是不确定的，对当前项目延期这个问题没有帮助。<br><br>至于某个成员能力不行这个问题，可以使用5W继续深挖，但深挖的目的不是为了解决项目延期的问题，而是解决成员能力不行这个问题，可能是招聘有问题、也可能是培养有问题、也可能是工作态度有问题，不同原因的对应措施不同。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            阿男  2021-01-29 07:54:53
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            感觉面试也能用的着，可以针对一个技术点，一层一层的问，每一级都对应着一个技术深度 [3赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-29 10:55:02</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">完全可以，面试的时候考察技术深度和思考深度就是用这个方法。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            sgb  2021-01-29 09:57:05
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            想到今年刚做的一个项目，没有按计划时间发布，<br>1.为什么没有按计划完成发布？<br>因为时间计划安排太紧，产品一直没达到老板要求，一再修改调整导致延期。<br>2.为什么时间计划安排不准确？<br>这是个技术产品，需求由团队内部提出，做成什么样也是内部决定，项目开始时没有明确好产品需求范围，没有明确好产品要做成什么样，自己做为负责人，把产品想简单了，很多隐形需求没评估到，所以时间没估准。<br>3.为什么把产品想简单了？<br>因为没有做好产品方案的调研，对于产品做成什么样没想清楚。另外老板心里其实有产品的样子，但是没领会他的想法。 [2赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-29 11:22:47</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">非常赞的案例👍<br><br>到了第3个问题后还可以继续问下去：为什么没有领会老板的想法？老板的想法为什么没有明确的表达出来？</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            王同学  2021-01-30 22:59:09
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            两个问题<br>1.用5w在分析线上bug时,如果发现是其他部门基础支撑平台提供的下载服务有问题，是不是就算找到核心问题了？<br>2.学习技术时，用5w确实可以深入理解某一项技术，但是理解到什么程度就可以终止？这个技术深度的度怎么去把握？ [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-31 09:29:14</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">1. 可以再多问1个w，但不需要继续深入了，这样做的目的是当其它人问起来的时候，如果你完全不知道基础平台的情况，可能会给人一种事不关己的感觉。<br>2. 参考19讲的链式学习法，一般来说领域深度3~5层差不多了，这一讲的netty就是5层，其实你直接按照5W来问，只要是逐步深入的，5个问题基本就够了。</div>
+</div>
+            
+    </div>
+</li>
+            </ul>
+</div>
+</body>
+</html>

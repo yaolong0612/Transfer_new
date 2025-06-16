@@ -1,0 +1,1260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>-->
+    <title>05-COMD能力模型：怎么把抽象的能力要求具体化？</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <style>
+        html {
+            color: #333;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-rendering: optimizelegibility;
+            font-family: Helvetica Neue, PingFang SC, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif
+        }
+
+        html.borderbox *,
+        html.borderbox :after,
+        html.borderbox :before {
+            box-sizing: border-box
+        }
+
+        article,
+        aside,
+        blockquote,
+        body,
+        button,
+        code,
+        dd,
+        details,
+        dl,
+        dt,
+        fieldset,
+        figcaption,
+        figure,
+        footer,
+        form,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        header,
+        hr,
+        input,
+        legend,
+        li,
+        menu,
+        nav,
+        ol,
+        p,
+        pre,
+        section,
+        td,
+        textarea,
+        th,
+        ul {
+            margin: 0;
+            padding: 0
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        menu,
+        nav,
+        section {
+            display: block
+        }
+
+        audio,
+        canvas,
+        video {
+            display: inline-block
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, Helvetica, sans-serif
+        }
+
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            padding: 0;
+            border: 0
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        fieldset,
+        img {
+            border: 0
+        }
+
+        blockquote {
+            position: relative;
+            color: #999;
+            font-weight: 400;
+            border-left: 1px solid #1abc9c;
+            padding-left: 1em;
+            margin: 1em 3em 1em 2em
+        }
+
+        @media only screen and (max-width: 640px) {
+            blockquote {
+                margin: 1em 0
+            }
+        }
+
+        abbr,
+        acronym {
+            border-bottom: 1px dotted;
+            font-variant: normal
+        }
+
+        abbr {
+            cursor: help
+        }
+
+        del {
+            text-decoration: line-through
+        }
+
+        address,
+        caption,
+        cite,
+        code,
+        dfn,
+        em,
+        th,
+        var {
+            font-style: normal;
+            font-weight: 400
+        }
+
+        ol,
+        ul {
+            list-style: none
+        }
+
+        caption,
+        th {
+            text-align: left
+        }
+
+        q:after,
+        q:before {
+            content: ""
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative
+        }
+
+        :root sub,
+        :root sup {
+            vertical-align: baseline
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        a {
+            color: #1abc9c
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        .typo a {
+            border-bottom: 1px solid #1abc9c
+        }
+
+        .typo a:hover {
+            border-bottom-color: #555;
+            color: #555
+        }
+
+        .typo a:hover,
+        a,
+        ins {
+            text-decoration: none
+        }
+
+        .typo-u,
+        u {
+            text-decoration: underline
+        }
+
+        mark {
+            background: #fffdd1;
+            border-bottom: 1px solid #ffedce;
+            padding: 2px;
+            margin: 0 5px
+        }
+
+        code,
+        pre,
+        pre tt {
+            font-family: Courier, Courier New, monospace
+        }
+
+        pre {
+            background: hsla(0, 0%, 97%, .7);
+            border: 1px solid #ddd;
+            padding: 1em 1.5em;
+            display: block;
+            -webkit-overflow-scrolling: touch
+        }
+
+        hr {
+            border: none;
+            border-bottom: 1px solid #cfcfcf;
+            margin-bottom: .8em;
+            height: 10px
+        }
+
+        .typo-small,
+        figcaption,
+        small {
+            font-size: .9em;
+            color: #888
+        }
+
+        b,
+        strong {
+            font-weight: 700;
+            color: #000
+        }
+
+        [draggable] {
+            cursor: move
+        }
+
+        .clearfix:after,
+        .clearfix:before {
+            content: "";
+            display: table
+        }
+
+        .clearfix:after {
+            clear: both
+        }
+
+        .clearfix {
+            zoom: 1
+        }
+
+        .textwrap,
+        .textwrap td,
+        .textwrap th {
+            word-wrap: break-word;
+            word-break: break-all
+        }
+
+        .textwrap-table {
+            table-layout: fixed
+        }
+
+        .serif {
+            font-family: Palatino, Optima, Georgia, serif
+        }
+
+        .typo-dl,
+        .typo-form,
+        .typo-hr,
+        .typo-ol,
+        .typo-p,
+        .typo-pre,
+        .typo-table,
+        .typo-ul,
+        .typo dl,
+        .typo form,
+        .typo hr,
+        .typo ol,
+        .typo p,
+        .typo pre,
+        .typo table,
+        .typo ul,
+        blockquote {
+            margin-bottom: 1rem
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: PingFang SC, Helvetica Neue, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+            color: #000;
+            line-height: 1.35
+        }
+
+        .typo-h1,
+        .typo-h2,
+        .typo-h3,
+        .typo-h4,
+        .typo-h5,
+        .typo-h6,
+        .typo h1,
+        .typo h2,
+        .typo h3,
+        .typo h4,
+        .typo h5,
+        .typo h6 {
+            margin-top: 1.2em;
+            margin-bottom: .6em;
+            line-height: 1.35
+        }
+
+        .typo-h1,
+        .typo h1 {
+            font-size: 2em
+        }
+
+        .typo-h2,
+        .typo h2 {
+            font-size: 1.8em
+        }
+
+        .typo-h3,
+        .typo h3 {
+            font-size: 1.6em
+        }
+
+        .typo-h4,
+        .typo h4 {
+            font-size: 1.4em
+        }
+
+        .typo-h5,
+        .typo-h6,
+        .typo h5,
+        .typo h6 {
+            font-size: 1.2em
+        }
+
+        .typo-ul,
+        .typo ul {
+            margin-left: 1.3em;
+            list-style: disc
+        }
+
+        .typo-ol,
+        .typo ol {
+            list-style: decimal;
+            margin-left: 1.9em
+        }
+
+        .typo-ol ol,
+        .typo-ol ul,
+        .typo-ul ol,
+        .typo-ul ul,
+        .typo li ol,
+        .typo li ul {
+            margin-bottom: .8em;
+            margin-left: 2em
+        }
+
+        .typo-ol ul,
+        .typo-ul ul,
+        .typo li ul {
+            list-style: circle
+        }
+
+        .typo-table td,
+        .typo-table th,
+        .typo table caption,
+        .typo table td,
+        .typo table th {
+            border: 1px solid #ddd;
+            padding: .5em 1em;
+            color: #666
+        }
+
+        .typo-table th,
+        .typo table th {
+            background: #fbfbfb
+        }
+
+        .typo-table thead th,
+        .typo table thead th {
+            background: hsla(0, 0%, 95%, .7)
+        }
+
+        .typo table caption {
+            border-bottom: none
+        }
+
+        .typo-input,
+        .typo-textarea {
+            -webkit-appearance: none;
+            border-radius: 0
+        }
+
+        .typo-em,
+        .typo em,
+        caption,
+        legend {
+            color: #000;
+            font-weight: inherit
+        }
+
+        .typo-em {
+            position: relative
+        }
+
+        .typo-em:after {
+            position: absolute;
+            top: .65em;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            content: "\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB"
+        }
+
+        .typo img {
+            max-width: 100%
+        }
+
+        .common-content {
+            font-weight: 400;
+            color: #353535;
+            line-height: 1.75rem;
+            white-space: normal;
+            word-break: normal;
+            font-size: 1rem
+        }
+
+        .common-content img {
+            display: block;
+            max-width: 100%;
+            background-color: #eee
+        }
+
+        .common-content audio,
+        .common-content video {
+            width: 100%;
+            background-color: #eee
+        }
+
+        .common-content center,
+        .common-content font {
+            margin-top: 1rem;
+            display: inline-block
+        }
+
+        .common-content center {
+            width: 100%
+        }
+
+        .common-content pre {
+            margin-top: 1rem;
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+            overflow: hidden
+        }
+
+        .common-content pre code {
+            font-size: .8rem;
+            font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            overflow-x: auto
+        }
+
+        .common-content hr {
+            border: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #f5f5f5;
+            height: 1px;
+            background: none
+        }
+
+        .common-content b,
+        .common-content h1,
+        .common-content h2,
+        .common-content h3,
+        .common-content h4,
+        .common-content h5,
+        .common-content strong {
+            font-weight: 700
+        }
+
+        .common-content h1,
+        .common-content h2 {
+            font-size: 1.125rem;
+            margin-bottom: .45rem
+        }
+
+        .common-content h3,
+        .common-content h4,
+        .common-content h5 {
+            font-size: 1rem;
+            margin-bottom: .45rem
+        }
+
+        .common-content p {
+            font-weight: 400;
+            color: #353535;
+            margin-top: .15rem
+        }
+
+        .common-content .orange {
+            color: #ff5a05
+        }
+
+        .common-content .reference {
+            font-size: 1rem;
+            color: #888
+        }
+
+        .custom-rich-content h1 {
+            margin-top: 0;
+            font-weight: 400;
+            font-size: 15.25px;
+            border-bottom: 1px solid #eee;
+            line-height: 2.8
+        }
+
+        .custom-rich-content li,
+        .custom-rich-content p {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.6
+        }
+
+        table.hljs-ln {
+            margin-bottom: 0;
+            border-spacing: 0;
+            border-collapse: collapse
+        }
+
+        table.hljs-ln,
+        table.hljs-ln tbody,
+        table.hljs-ln td,
+        table.hljs-ln tr {
+            box-sizing: border-box
+        }
+
+        table.hljs-ln td {
+            padding: 0;
+            border: 0
+        }
+
+        table.hljs-ln td.hljs-ln-numbers {
+            min-width: 15px;
+            color: rgba(27, 31, 35, .3);
+            text-align: right;
+            white-space: nowrap;
+            cursor: pointer;
+            user-select: none
+        }
+
+        table.hljs-ln td.hljs-ln-code,
+        table.hljs-ln td.hljs-ln-numbers {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+            font-size: 12px;
+            line-height: 20px;
+            vertical-align: top
+        }
+
+        table.hljs-ln td.hljs-ln-code {
+            position: relative;
+            padding-right: 10px;
+            padding-left: 10px;
+            overflow: visible;
+            color: #24292e;
+            word-wrap: normal;
+            white-space: pre
+        }
+
+        video::-webkit-media-controls {
+            overflow: hidden !important
+        }
+
+        video::-webkit-media-controls-enclosure {
+            width: calc(100% + 32px);
+            margin-left: auto
+        }
+
+        ._29HP61GA_0 {
+            max-width:800px;
+            margin:0 auto;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #353535;
+            line-height: 1.76;
+            white-space: normal;
+            word-break: normal;
+            font-size: 17px;
+            -webkit-transition: background-color .3s ease;
+            transition: background-color .3s ease
+        }
+
+        ._29HP61GA_0 .MathJax_Display {
+            overflow: auto
+        }
+
+        ._29HP61GA_0 .poster {
+            position: fixed;
+            left: -10000px;
+            top: -10000px;
+            overflow: hidden;
+            padding: 1rem;
+            background: #ececec
+        }
+
+        ._29HP61GA_0 .richcontent-pre-copy {
+            font-size: 13px;
+            color: #888;
+            position: absolute;
+            right: 1em;
+            top: .5em;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        ._29HP61GA_0 .richcontent-pre-copy .iconfont {
+            font-size: 12px;
+            margin-right: .2em
+        }
+
+        ._29HP61GA_0 a {
+            color: #fa8919;
+            border-bottom: 1px solid #fa8919
+        }
+
+        ._29HP61GA_0 img {
+            display: block;
+            max-width: 100%;
+            position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            background-color: #eee;
+            vertical-align: top;
+            border-radius: 0
+        }
+
+        ._29HP61GA_0 audio,
+        ._29HP61GA_0 video {
+            width: 100%;
+            background-color: #eee
+        }
+
+        ._29HP61GA_0 pre {
+            margin-top: 16px;
+            padding: 34px 0 0;
+            margin-bottom: 30px;
+            position: relative;
+            border-radius: 6px;
+            background: rgba(246, 247, 251, .749);
+            border: 0
+        }
+
+        ._29HP61GA_0 pre code {
+            font-size: 12px;
+            font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+            display: block;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            margin-left: 16px;
+            margin-right: 16px;
+            overflow-x: scroll
+        }
+
+        ._29HP61GA_0 pre code:after {
+            content: "";
+            height: 30px;
+            width: 100%;
+            display: block
+        }
+
+        ._29HP61GA_0 hr {
+            border: none;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 1px solid #f5f5f5;
+            height: 1px;
+            background: none
+        }
+
+        ._29HP61GA_0 h1,
+        ._29HP61GA_0 h2,
+        ._29HP61GA_0 h3,
+        ._29HP61GA_0 h4,
+        ._29HP61GA_0 h5 {
+            margin-bottom: 20px;
+            margin-top: 0;
+            font-weight: 700
+        }
+
+        ._29HP61GA_0 b,
+        ._29HP61GA_0 strong {
+            font-weight: 700
+        }
+
+        ._29HP61GA_0 h1 {
+            font-size: 21px
+        }
+
+        ._29HP61GA_0 h2 {
+            font-size: 20px
+        }
+
+        ._29HP61GA_0 h3 {
+            font-size: 19px
+        }
+
+        ._29HP61GA_0 h4 {
+            font-size: 18px
+        }
+
+        ._29HP61GA_0 h5 {
+            font-size: 17px
+        }
+
+        ._29HP61GA_0 center,
+        ._29HP61GA_0 p {
+            font-weight: 400;
+            color: #353535;
+            margin-top: 0;
+            margin-bottom: 30px;
+            word-break: break-word
+        }
+
+        ._29HP61GA_0 center {
+            text-align: center
+        }
+
+        ._29HP61GA_0 blockquote {
+            margin-top: 0;
+            margin-bottom: 34px;
+            border-left: 3px solid #e8e8e8;
+            padding-left: 17px;
+            color: #353535
+        }
+
+        ._29HP61GA_0 blockquote p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        ._29HP61GA_0 ol,
+        ._29HP61GA_0 ul {
+            margin-bottom: 30px
+        }
+
+        ._29HP61GA_0 ol p,
+        ._29HP61GA_0 ul p {
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        ._29HP61GA_0 ol {
+            list-style: decimal;
+            margin-left: 20px
+        }
+
+        ._29HP61GA_0 ul li {
+            padding-left: 17px;
+            position: relative;
+            margin-bottom: 10px
+        }
+
+        ._29HP61GA_0 ul li:after {
+            content: "";
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background: #353535;
+            position: absolute;
+            top: 10px;
+            left: 0
+        }
+
+        ._29HP61GA_0 .orange {
+            color: #fa8919
+        }
+
+        ._29HP61GA_0 .reference {
+            color: #888
+        }
+
+        ._29HP61GA_0 .m-right {
+            text-align: right
+        }
+
+        ._29HP61GA_0 .m-center {
+            text-align: center;
+            display: block
+        }
+
+        ._29HP61GA_0 .m-gray {
+            color: #888
+        }
+
+        ._29HP61GA_0 .m-small {
+            font-size: 15px
+        }
+
+        ._29HP61GA_0 table.hljs-ln {
+            margin-bottom: 0;
+            border-spacing: 0;
+            border-collapse: collapse
+        }
+
+        ._29HP61GA_0 table.hljs-ln,
+        ._29HP61GA_0 table.hljs-ln tbody,
+        ._29HP61GA_0 table.hljs-ln td,
+        ._29HP61GA_0 table.hljs-ln tr {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        ._29HP61GA_0 table.hljs-ln td {
+            padding: 0;
+            border: 0
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+            min-width: 15px;
+            font-size: 12px;
+            color: rgba(27, 31, 35, .3);
+            text-align: right;
+            white-space: nowrap;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-code,
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+            font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+            line-height: 20px;
+            vertical-align: top
+        }
+
+        ._29HP61GA_0 table.hljs-ln td.hljs-ln-code {
+            position: relative;
+            padding-right: 10px;
+            padding-left: 10px;
+            overflow: visible;
+            font-size: 13px;
+            color: #666;
+            word-wrap: normal;
+            white-space: pre
+        }
+
+    </style>
+</head>
+<body>
+<div class="_29HP61GA_0">
+<h1>05-COMD能力模型：怎么把抽象的能力要求具体化？</h1>
+<p>你好，我是华仔。</p><p>上一讲我分享了两条晋升逻辑和一套通用的晋升步骤。现在你已经知道，要先把当前级别要求的能力提升到精通程度，然后尝试做下一级别的事情。</p><p>不过在这个过程中，你还会遇到另一个麻烦，那就是不确定下一级别的能力要求到底是怎样的，所以你也不知道究竟要准备到什么程度。</p><p>举个最常见的例子，不同级别有不同的Title（头衔），比如“工程师”“高级工程师”和“专家工程师”等。但是，这样的 Title 对我们理解不同级别的能力要求，是完全没有什么用处的。“高级工程师”到底“高级”在哪，可能每个人的理解都不一样。</p><h2>公司统一的能力描述：抽象</h2><p>为了指导员工晋升，公司一般都会对各个级别的能力要求给出描述。但是因为细分的领域实在太多了，所以公司只能进行非常抽象的描述。</p><p>比如，P7的要求是“具备系统思考的能力，能够全面掌握某个技术领域”，而P8的要求是“具备前瞻判断的能力，能够规划技术领域的发展方向”。</p><p>从实际的效果来看，这样的描述<strong>基本没什么效果</strong>，绝大部分人看完还是一头雾水。在实际工作中，团队成员经常跟我反馈这样的困惑：</p><ul>
+<li>什么是<strong>系统思考</strong>能力？P7才要求系统思考，可是我P6的时候参与项目开发，就需要考虑需求的合理性、索引设计高性能、接口的兼容性和易用性、上线的灰度方案这么多事情，这些难道不是系统思考吗？</li>
+<li>什么是<strong>前瞻判断</strong>能力？P6要预测需求变化，P7要规划团队技术发展，这些也是前瞻判断呀，为什么P8要特别强调前瞻判断？</li>
+</ul><!-- [[[read_end]]] --><p>可以说，晋升疑惑千千万，能力要求占一半。这一讲我要介绍的就是把抽象要求具体化的方法。</p><h2>领域定制的能力解读：比较具体</h2><p>因为公司的抽象描述很难指导实际工作，所以有些领域会独立定制自己的职级能力解读，一般是由P8或P9级别的员工以工作组的方式讨论得出来的。</p><p>比如“Java业务开发”这个领域，P6和P7级别的能力解读长什么样呢？你可以参考下面的表格。</p><p>（注：这张表格仅供参考。它不是完整的解读，不代表所有公司的实际要求。你也不需要看懂里面的所有内容，只要了解这个形式就可以了。）</p><p><img src="https://static001.geekbang.org/resource/image/06/b7/0653e9a2yy8b3660d402fd70031190b7.jpg" alt=""></p><p>我们可以看到，这份标准跟公司的描述相比，已经具体很多了。如果按照这个思路，完整地把各个级别要求的能力一一列出来，不但可以作为晋升的标准，也可以作为学习的参考。</p><p>其实这种做法对员工是有利的，因为标准越明确，就越容易“照本宣科”地去做。但是从公司的角度来看，这种做法存在成本太高（有几十上百个专业领域要制定详细标准，每年都要更新）、限制创新（大家都只管对照公司标准来做事，其它一概不管）等问题，所以很少有公司会这么做。</p><h2>COMD能力模型：4种复杂度+3个维度</h2><p>为了彻底解决要求不明确的问题，让你更好地理解不同职级的能力差异，我根据自己的思考和担任晋升评委的经验，提炼出了一套兼容性很强又容易理解的能力模型：<strong>面向复杂度的多维度能力模型</strong>（Complexity-Oriented &amp; Multi-Dimension Capability Model），简称<strong>COMD能力模型</strong>。</p><p>COMD的CO是指Complexity-Oriented，意思是“面向复杂度”（灵感来源于“面向对象”）；MD是指Multi-dimension，意思是“多维度”，也就是技术、业务和管理3个维度。</p><p>COMD的核心指导思想是，<strong>通过事情的复杂度来判断能力的高低</strong>，级别越高，所做的事情复杂度也越高。</p><p>当然，如果只是单纯地用复杂度来判断能力高低，那么它本质上和其他方法也没什么不同，看不懂的地方还是看不懂，不同的人理解还是不同。</p><p>所以，为了清晰地描述不同能力层级的差异，COMD能力模型还进一步地明确了复杂度，具体包括规模复杂度、时间复杂度、环境复杂度和创新复杂度4种类型。</p><h3>1.  规模复杂度</h3><p>规模复杂度是指和规模大小有关的复杂度。</p><p>规模越大，复杂度越高。原因在于规模越大，节点越多，节点间的关系越复杂，而且节点间的关系复杂度是指数增长的。就像下面的图片所展示的：当节点数只有3个时，节点间的关系也只有3个；而节点数达到6个时，节点间的关系就变成了15个，复杂度提升了5倍。</p><p><img src="https://static001.geekbang.org/resource/image/ea/59/eayyd87a3cf233299b58bb632e68a959.jpg" alt=""></p><p>按照这个原理，我们可以对一些常见工作维度的规模复杂度进行比较，具体如下表所示。</p><p><img src="https://static001.geekbang.org/resource/image/a3/0c/a3d429b12fb94f239f6fac84376cb10c.jpg" alt=""></p><p>当然，以上对比的前提是，除了规模之外，其他条件都差不多。（对比其他几个复杂度时也是这样）。就像表格中200行代码和2000行代码对比，前提是代码复杂度是差不多的。因为200行核心代码的复杂度，显然比2000行拷贝粘贴的代码要高。</p><h3>2.  时间复杂度</h3><p>时间复杂度是指和时间跨度有关的复杂度。</p><p>时间跨度越长，复杂度越高。原因在于万事万物都处于不断发展变化当中，时间跨度越长，变化的因素和可能方向越多，越难判断准确。</p><p>三大维度的时间复杂度的对比举例如下表所示。</p><p><img src="https://static001.geekbang.org/resource/image/c7/95/c742fb1d759eccccf5d2489f7be5bf95.jpg" alt=""></p><h3>3. 环境复杂度</h3><p>环境复杂度是指和环境不确定性有关的复杂度。</p><p>我们很多的判断、决策和行为都依赖于对环境的认知和反应。总的来说，环境不确定性越高，复杂度越高。</p><p>环境的不确定性具体分为环境的稳定性、环境的透明性和环境的可预见性3个方面：</p><ul>
+<li>环境的稳定性，指环境变化的速度快慢。</li>
+<li>环境的透明性，指是否能够明确地获取环境相关的信息。</li>
+<li>环境的可预见性，指是否会发生完全无法预料的黑天鹅事件。</li>
+</ul><p>环境的稳定性、透明性和可预见性越低，它的不确定性就越高，复杂度也越高。</p><p>下面这个表格从宏观的角度分析了技术、管理和业务三个维度所面临的环境不确定性。</p><p><img src="https://static001.geekbang.org/resource/image/b5/9e/b501ac73ffe078e0674d72f17d85b49e.jpg" alt=""></p><p>从表格中可以看出，对于互联网行业的业务来说，环境稳定性、透明性和可预见性都比较低，所以它的环境复杂度是最高的。这也是在互联网大厂，大部分P9/P10都需要把很多时间和精力投入到业务上的主要原因。</p><h3>4. 创新复杂度</h3><p>创新复杂度是指和创新程度有关的复杂度。</p><p>常见的创新包括理论的创新、思想（或者说方法）的创新和技巧的创新。理论创新的复杂度要高于思想创新，而思想创新的复杂度又高于技巧创新。</p><p>以高可用技术领域为例：</p><ul>
+<li>FLP原理和CAP定理属于<strong>理论创新</strong>。它们奠定了分布式高可用设计的基础和边界，无论是缓存系统、存储系统、批处理系统、流式处理系统还是采用微服务架构的业务系统等，都不能跳出这两个理论的约束和限制。</li>
+<li>批处理和流处理属于<strong>思想创新</strong>。对于大数据技术来说，一开始Google提出的批处理思路开启了大数据时代，而后来Storm开启了流处理这个新的技术领域。</li>
+<li>实现Exactly Once特性属于<strong>技巧创新</strong>。开源框架Flink使用Chandy-Lamport 算法，实现了流处理Exactly Once的特性，能够实现消息精确投递，避免重复消息导致业务出错。</li>
+</ul><p>我们可以看到，创新复杂度越高，影响的范围往往也越大。理论创新会奠定整个行业的基础，而思想创新可能开辟一个新的技术领域。</p><p>另外，创新并不意味着一定要全球首创，只要相比团队当前现状来说有改进就行了；创新也不局限于技术领域，管理和业务一样可以创新。所以，下面这些事情都可以算是创新：</p><ol>
+<li>开发Memcache</li>
+<li>有了Memcache后开发Redis</li>
+<li>引入设计模式优化代码</li>
+<li>使用微服务来拆分系统</li>
+<li>优化项目流程</li>
+<li>提出一种新的业务模式</li>
+</ol><p>各领域的部分典型创新案例如下表所示，你可以参考对照。</p><p><img src="https://static001.geekbang.org/resource/image/5c/68/5cae1a8ed6d5ba85179d313a583de368.jpg" alt=""></p><p>除了刚才说的这4种通用的复杂度之外，在每个领域内部，也会有一些工作的复杂度本身就要比另一些工作高。</p><p>比方说在软件开发领域，我们一般认为各项工作的复杂度排序是这样的：</p><p>$$从0到1创造系统 &gt; 架构重构 &gt; 项目方案设计 &gt; 编码实现$$</p><p>不过这些认知是领域经验总结形成的共识，并不能通用。所以在使用COMD模型的时候，你还是需要结合领域经验综合判断。</p><h2>COMD与抽象描述的对比</h2><p>我想，你现在应该知道为什么公司写的那些抽象描述让人看不懂了。跟COMD能力模型的具体拆解比起来，它们只是脱离实际的文字游戏罢了。我就拿这一讲开头提出的“系统思考”和“前瞻判断”来说好了。</p><h3>系统思考</h3><p>比如在某些大厂，“系统思考”的确是写在P7级别的能力描述里，但它不是P7级别才有的能力特征。实际上，P6以上的级别都要求“系统思考”，区别只是<strong>思考的范围</strong>不同，也就是<strong>规模复杂度</strong>不同而已。</p><p>以B2C电商业务开发为例，在某些大厂，不同级别“系统思考”的范围如下图所示：</p><p><img src="https://static001.geekbang.org/resource/image/25/76/256f46afaff6edb59ba7b1bf4ee47f76.jpg" alt=""></p><ul>
+<li>对于P6来说，系统思考的范围是某个<strong>需求</strong>，需要考虑需求的合理性、设计的可扩展性和上线后的稳定性等问题。</li>
+<li>对于P7来说，系统思考的范围是单个<strong>系统</strong>，需要考虑的是单个系统的架构设计、架构重构和技术选型等问题。</li>
+<li>对于P8来说，系统思考的范围是某个<strong>领域</strong>，需要考虑的是领域的发展趋势、架构演进、团队组织结构等问题。</li>
+<li>对于P9来说，系统思考的范围是多个关联的业务域组成的<strong>业务线</strong>，需要考虑业务发展趋势、架构演进、团队组织结构等问题。</li>
+</ul><h3>前瞻判断</h3><p>同样地，在某些大厂，“前瞻判断”虽然写在了P8的能力描述里，但其实P6以上都有前瞻性的要求，区别只是在于前瞻范围、时间跨度和面临的环境不同而已。这些因素就分别对应了规模复杂度、时间复杂度和环境复杂度。</p><p>同样以B2C电商业务开发为例，某些大厂P6～P9级别的前瞻性要求如下表所示：</p><p><img src="https://static001.geekbang.org/resource/image/79/a7/7901c8dc04db3d0edef3003eba2e06a7.jpg" alt=""></p><p>所以说，如果你还在绞尽脑汁地钻研“为什么P7才提出系统思考”以及“P8要求的前瞻判断有什么深意”这样的问题，那就掉到文字陷阱的坑里去了，白白浪费脑细胞。至于怎么从坑里走出来呢？这就需要灵活应用COMD能力模型了。</p><h2>如何应用COMD</h2><p>当你想要了解某个级别的能力要求的时候，不要再对着那些抽象和模糊的词语，不着边际地猜测和想象了。你应该静下心，坐下来填一个“能力矩阵”的表格，把每一项的要求都完整且具体地列出来。比如下面这个“能力矩阵”表格就摘录了P6级别的部分要求，可以作为参考。</p><p><img src="https://static001.geekbang.org/resource/image/b1/72/b10dcec32eb291c464da50636c2c3572.jpg" alt=""></p><p>如果表格里有些内容你填不出来，说明你对这个级别的理解还不到位。不过没有关系，我会在课程的第二部分，也就是职级详解中给出每个级别通用的衡量标准。</p><p>在这个基础上，你可以请教你的主管、HR和同事等人，来完善和细化表格内容。当你详细地填完了这个表格，你也就对这个级别了解得很清楚了。接下来，你就可以对照表格，针对性地提升自己的能力。</p><h2>小结</h2><p>现在，我们回顾一下这一讲的主要内容。</p><ol>
+<li>公司会对各个级别的能力要求给出一个抽象的描述，比如“系统思考”和“前瞻判断”等，但实际指导意义不大。</li>
+<li>有些领域可能会独立定制相关技术方向的能力解读。虽然这种解读比公司的抽象描述稍微具体一些，但因为投入成本太大和限制创新等原因，很难大范围推广。</li>
+<li>我总结的COMD能力模型，把能力分成技术、管理和业务三个维度，并通过规模、时间、环境和创新四个复杂度来判断能力的高低。</li>
+<li>如果你想了解某个级别的能力要求，为晋升做准备，可以把这个级别的能力模型表格列出来，然后针对表格内容做针对性的提升。</li>
+</ol><h2>思考题</h2><p>这就是今天的全部内容，最后留一道课后思考题给你吧。记得有一次，团队成员跟我探讨职级的时候，问了我一个问题：“为什么说P6是独当一面，难道P7、P8和P9没有独当一面的要求吗？”学了COMD能力模型之后，你会怎么回答这个问题呢？</p><p>欢迎你把答案写到留言区，和我一起讨论。相信经过深度思考的回答，也会让你对知识的理解更加深刻。</p><p><img src="https://static001.geekbang.org/resource/image/83/96/83211d404c6701c8791c59df4170bb96.jpeg" alt=""></p><h2>精选留言：</h2>
+        <ul>
+        
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            一兵一卒  2020-12-04 08:53:11
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            独当一面的“面积”不一样，P6的面积是15寸笔记本屏幕大小，P7的面积是32寸液晶显示器大小，P8的面积是65寸高清显示器大小，P9的面积是公司门口的大号液晶显示屏。。。 [29赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-04 09:46:34</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">哈哈，你已经理解了������������������</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            潜行  2020-12-09 18:20:55
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            &gt; 所以，为了清晰地描述不同能力层级的差异，COMD 能力模型还进一步地明确了复杂度，具体包括规模复杂度、时间复杂度、环境复杂度和创新复杂度 4 种类型。<br><br>很好奇老师是怎么想到按这几个维度来拆分的。很多时候对一件事情的理解无法深入就是不知道该怎么继续往下拆分，老师的能力模型一下子把模糊的评级能力要求拆解的特别清晰。特别想提升这方面的能力，想请问老师可以通过哪些方式来锻炼？ [11赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-09 19:40:06</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">说来话长，关于如何衡量和考察技术人员的能力，最早我在UC的时候就开始思考了，但是并没有找到很好的答案，后来自己晋升、又带团队、又当评委，积累了很多经验和案例，这次写的时候灵感就爆发了。<br><br>对于一个复杂或者模糊的问题，一下子看不到答案，就可以尝试去拆分，可以按照逻辑维度、流程维度、分类维度等去拆分，COMD模型的3个维度其实就是分类拆分的，4个复杂度就是按逻辑来拆分的。<br><br>至于如何提升这种能力，我感觉可能跟我看书比较多有关，例如人文社科心理学经济学管理学等，看多了会潜移默化，无意中学习了一些方法吧</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            术子米德  2020-12-05 06:47:11
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            🤔☕️🤔☕️🤔<br>单维度内：把基本的事情做对，把难的事情做对<br>多维度内：把基本的事情做对，把难的事情做对<br>多维度间：把基本的事情做顺，把难的事情做顺<br>新维度时：把基本的事情理清，把难的事情理清<br> [7赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-05 21:22:41</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">有点抽象，我没太看懂 ：）</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            ^_^  2020-12-06 19:31:19
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            不愧是大佬，面向复杂度的多维度能力模型，优秀 [4赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-06 22:50:51</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">其实我也是想了好久才想到这个模型，得到这个结果前，可能想了10几种方法������</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Ethan New  2020-12-04 00:48:41
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            P6以上是独挡多面 [3赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-04 08:19:56</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">P6是独当一面，不是多面，你可以再看看文章理解一下</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Geek_3b1096  2021-01-01 05:19:32
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            COMD能力模型<br><br> 干货！ [2赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-01 15:37:58</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">是我结合自己的管理经验和面评经验总结出来的原创模型</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Johar  2020-12-13 21:42:15
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            中途转的JAVA，目前作为一个小组长，技术不行，管理上也在摸索，这种情况下，是偏向技术还是偏向管理比较好？ [2赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-14 08:48:28</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">P9以前都是专业为核心，管理是附加分</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            罗一  2020-12-08 08:22:11
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            请问一下对comd模型，有什么出处吗？我查了查资料但是没查到 [2赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-08 09:02:12</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">我自己原创的，你在网上肯定查不到，仅此一家，别无分店 ：）</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            helloworld  2020-12-05 11:48:21
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            这节课学到了，对能力等级有了一个更具象的理解，赞👍 [2赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-05 21:22:26</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">这个是一个模型，一种思维方式，目的就是比较具体的拆解能力要求，后续每个级别还会有详细的解读。</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            溯  2021-01-16 00:21:32
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            在某团，明年很快就要参加第一次晋升了，虽然绩效都很不错，不是S就是A，感谢领导信任，也让带了团队，但之前心里一直没底，对晋升这块的认知和晋升的机关暗道等都不了解，认真咀嚼了老师的几篇大作后，有多次的醍醐灌顶的感觉，暗暗称棒，真的很棒，尤其这COMD模型！！！<br>看完感觉晋升的信心提升了很多，在晋升的方法论这块，相信看完后不输于那些晋升“老油条们”，老师的文章真的是及时雨，弥补了我在这方面认知的薄弱甚至空白。 [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-16 08:34:18</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">祝你顺利晋升，加油👍👍👍✊🏻</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            R20114  2020-12-10 08:52:52
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            读了两遍，从抽象要求到细化到具体要求后，再去看抽象，再去看抽象的要求，比第一眼看这个要求能读到更多的信息了。 [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-10 15:49:49</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">因为你已经知道抽象背后的描述内容是什么了</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            派森  2020-12-08 09:32:50
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            读了2遍，直面自己和直属领导的差距 [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-09 10:33:07</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">除了直面，更要学习别人的长处和厉害的地方</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            红圈中人  2020-12-04 22:02:17
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            复杂度，心有多大，能力有多大，舞台才能有多大！<br>多大屁股穿多大裤衩😝 [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-05 21:23:01</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">很形象，但是有点污 ：）</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            小熊  2020-12-04 11:27:24
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            P7的能力表格那~ [1赞]
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2020-12-05 21:24:10</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">后面会有</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            老菜  2021-02-12 23:07:14
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            请问，这里的架构重构是指，系统的业务逻辑重构，比如原有业务顺序重新调整，算法调整，还是技术框架增加调整之类的，比如引入new sql之类的。 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-02-13 08:39:35</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">后一种，不过从这个问题来看，你对架构，框架等概念看起来还不是很清晰，系统架构不是技术框架，而且技术框架也不会说增加</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Geek_a2e439  2021-02-11 17:49:15
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            读后很受用，但有点模糊，感觉不同级别比较关键的一个区别因素是负责的系统范围。这个会不会直接来看上级负责的范围就知道所需要的能力了呢？ 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-02-11 18:49:25</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">范围就是规模复杂度的一种，P5&#47;P6可以认为是上级的范围，但P7&#47;P8就比上级的范围要大了，P9就直接自己负责某个范围了</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            Ansyear  2021-01-31 09:38:58
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            这篇干货满满啊 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-31 12:11:45</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">独家首创，别无分店 ：）</div>
+</div>
+            
+    </div>
+</li>
+            
+<br/>
+
+<li>
+    <div>
+        <div style="color: #888;font-size:15.25px;font-weight:400;            line-height:1.2">
+            威龙  2021-01-16 22:01:36
+        </div>
+        <div style="color:#353535;font-weight:400;white-space:normal;            word-break:break-all;line-height:1.6">
+            华仔总结的COMD模型有种相见恨晚的感觉，最大的启发就是COMD模型是套分析工具，不仅仅可以用于晋升，对于不确定性的产品目标、OKR、KPI的制定也可以借鉴使用。在研读JobModel的时候，确实有一些困惑。例如：作为平台型PD要对技术有较强认知，形成有创造性的产品方案。这样的标准只给了个大方向，具体细节的要求没有表述，跟老板交流下来，也不能完全解开所有的困惑。 
+        </div>
+        <br/>
+<div>
+    <div style="color:#888;font-size:15.25px;font-weight:400;        line-height:1.2">作者回复2021-01-16 23:39:55</div>
+    <div style="color:#353535;font-weight:400;white-space:normal;        word-break:break-all;line-height:1.6">举一反三，学习了，我自己都没注意到COMD好像确实可以应用到产品目标这些😂</div>
+</div>
+            
+    </div>
+</li>
+            </ul>
+</div>
+</body>
+</html>
